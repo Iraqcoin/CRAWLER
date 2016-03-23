@@ -20,7 +20,7 @@ public class test {
         Document document = null;
 
         // need http protocol
-        document = Jsoup.connect("http://xabuon.com/content/63461-v--co-that-100-khoa-hocbo-tay-khong-giai-thich-duoc--x.htm").get();
+        document = Jsoup.connect("http://xabuon.com/content/63197-3--choaacuteng-voi-quagrave-cuoi-cuc-khung-ngocirc-ky-long-dagravenh-tang-vo---3.htm").get();
 
         // get page title
         String title = document.title();

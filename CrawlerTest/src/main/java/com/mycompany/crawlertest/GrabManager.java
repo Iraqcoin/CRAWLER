@@ -65,6 +65,7 @@ public class GrabManager {
         System.out.println("in " + stopWatch.getTime() / 1000 + " seconds");
         
         for (String url : Uttils.URLS) {
+            System.out.println(url);
           
             if(!url.contains("http"))
             {

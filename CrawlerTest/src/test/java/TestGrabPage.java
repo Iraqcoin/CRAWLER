@@ -21,8 +21,8 @@ import java.util.concurrent.Future;
 public class TestGrabPage {
 
     public static void main(String[] args) throws InterruptedException, ExecutionException, MalformedURLException, IOException {
-        GrabManager grabManager = new GrabManager(3, 500);
+        GrabManager grabManager = new GrabManager(2, 200);
         grabManager.go(new URL("http://xabuon.com/"));
-        grabManager.write("urllist.txt");
+        //grabManager.write("urllist.txt");
     }
 }
