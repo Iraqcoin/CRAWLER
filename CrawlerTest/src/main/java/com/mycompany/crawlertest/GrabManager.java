@@ -74,6 +74,7 @@ public class GrabManager {
             }
             try{
               Document document = Jsoup.parse(new URL(url), TIMEOUT);
+              
               if(document.getElementsByTag("h1") != null && document.getElementsByTag("h1").size()!=0){
                   Elements videoTag = document.getElementsByTag("iframe");
                   if(videoTag != null && videoTag.size() !=0){
