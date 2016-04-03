@@ -1,0 +1,144 @@
+<div class="div_panel_friends_groups facebook_core_post_div">
+	<div class="div_title">
+	    <div class="clearfix">
+	        <div class="left" style="width: 100px;">
+	            <h3>Thao Tác</h3>
+	        </div>
+	        <div class="right">
+	        	<input id="ussv_post_input_id_objects" value="" placeholder="ID Objects" style="margin: 2px;padding: 5px 2px;"> 
+				<select style="padding: 4px;" id="ussv_post_type_objects" class="facebook_core_post input_mail _42ft _4jy0 _55pi _5vto _55_p _2agf _p _4jy3 _517h _51sy _no">    
+					<option value="0" selected>User</option>
+					<option value="1">Group</option>
+					<option value="2">Page</option>
+				</select>				 	        	
+	        	<button value="1" id="ussv_post_btn_get_uid" class="layerConfirm uiOverlayButton _42ft _4jy0 _4jy3 _517h _51sy" type="submit" style="padding: 1px 6px;font-size: 11px;">Get UID</button>
+	        </div>
+	    </div>
+	</div> 
+	<div class="_4-u2 mbm _5jmm _5pat _5v3q" style="padding-top: 10px;">
+		<div class="panel_thaotac_list_id">
+			<div class="div_panel_uid_geting_laning" style="border-bottom: 1px solid rgb(229, 229, 229);display: none;width: 100%;">
+				<span id="ussv_post_uid_geting_note" style="position: relative;width: 60%;float: left;color: rgb(27, 28, 105);"></span>
+				<span style="">
+					Total: <span id="ussv_post_uid_TK_TT" style="color: rgb(31, 197, 65);">0</span> 
+					<span style="float:right;margin-left: 10px;margin-right: 10px;">Now: <span id="ussv_uid_TK_NOW" style="color: rgb(197, 31, 75)">0</span></span><br/>
+					<span>Type: <span id="ussv_post_uid_type_get_note" style="color: rgb(197, 31, 75)">User</span></span>
+				</span>				
+			</div>		
+			<textarea class="textarea_fb list_uid_will_post" style="width:100%;max-height: 500px;border: 1px solid #EDEDED;" placeholder="Nhập list ID vào đây..."></textarea>
+			<input id="ussv_post_img" style="padding: 2px;margin-bottom: 5px;" type="text" class="input_mail _51sy" placeholder="Link ảnh..."> <br/>
+			<button value="1" id="clear_list_id" class="layerConfirm uiOverlayButton _42ft _4jy0 _4jy3 _517h _51sy" type="submit">Clear</button>
+			<select style="padding: 3px;" id="ussv_sl_type_post" class="input_mail _42ft _4jy0 _55pi _5vto _55_p _2agf _p _4jy3 _517h _51sy _no">
+			    <option value="wall">Wall</option>
+			    <option value="inbox">Inbox</option>
+			</select>		
+			<span style="float:right">
+				<button value="1" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy btn_type_post start">Đăng</button>
+				<button style="display:none" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy btn_type_post stop">Dừng Lại</button>
+				<img class="hidden img_waiting_post" style="margin-top: 5px;" src="https://ussv.net/themes/img/load_stt.gif">
+			</span>
+			<br/>
+			<div class="div_panel_post_note" style="border-top: 1px solid rgb(229, 229, 229);padding-top: 10px;display: inline-block;width: 100%;">
+				<span id="div_panel_post_note_span" style="position: relative;width: 60%;float: left;color: rgb(27, 28, 105);"></span>
+				<span style="float:right">
+					Thành Công: <span id="ussv_post_TK_TC" style="color: rgb(31, 197, 65);">0</span> 
+					<span style="float:right;margin-left: 10px;margin-right: 10px;">Thất Bại: <span id="ussv_post_TK_TB" style="color: rgb(197, 31, 75)">0</span></span><br/>
+					<span>Quyền Đăng: <span id="ussv_post_AU_QD" style="color: rgb(197, 31, 75)">Yes</span></span>
+				</span>				
+			</div>
+		</div>
+
+	</div>
+	<div class="div_title">
+	    <div class="clearfix">
+	        <div class="left">
+	            <h3>Thiết Lập</h3>
+	        </div>
+	        <div class="right">
+	        
+	        </div>
+	    </div>
+	</div> 
+	<div class="_4-u2 mbm _5jmm _5pat _5v3q" style="padding-top: 10px;">
+		<div class="panel_thaotac_list_id">
+			<div class="span_thongke st spam inbox more">
+				<span class="ussv_post_setting_left">Xóa Tin Nhắn Sau Khi Gửi</span>
+				<span id="" >
+					<select id="uss_st_spam_delmsg_inbox" name="tt" class="select_start _4jy0 _517h">
+						<option value="0" selected>No</option>
+						<option value="1">Yes</option>
+					</select>
+				</span>
+			</div><br/>
+			<div class="span_thongke st spam inbox more">
+				<span class="ussv_post_setting_left">Âm Thanh Captcha</span>
+				<span id="" >
+					<select id="uss_st_spam_inbox_alertcaptcha" name="tt" class="select_start _4jy0 _517h">
+						<option value="0">No</option>
+						<option value="1">Yes</option>
+					</select>
+				</span>
+			</div><br/>
+			<div class="span_thongke st spam inbox more">
+				<span class="ussv_post_setting_left">Điền Captcha</span>
+				<span id="" >
+					<select id="uss_st_spam_inbox_autocaptcha" name="tt" class="select_start _4jy0 _517h">
+						<option value="0" selected>Điền Tay</option>
+						<option value="1">Tự Động</option>
+					</select>
+				</span>
+				<div style="margin:10px" class="hidden" id="ussv_post_div_uss_aut">
+					<input id="user" value="" placeholder="Username USS">
+					<input id="user_pass" value="" type="password" placeholder="Pass USS">					
+				</div>
+			</div><br/>						
+		</div>
+
+	</div>	
+	<div class="div_title">
+	    <div class="clearfix">
+	        <div class="left">
+	            <h3>Công Cụ</h3>
+	        </div>
+	        <div class="right">
+	        <span id="total_friends"></span> <span style="float:right;margin-left: 10px;">Đã Chọn <span id="total_friends_select">0</span></span>
+	        </div>
+	    </div>
+	</div>  
+	<div class="_4-u2 mbm _5jmm _5pat _5v3q" style="padding-top: 10px;">
+	    <div class="div_row_fr_list_top">
+		    <button value="1" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy btn_get_list_friends">Lấy Danh Sách Bạn Bè</button> 
+		    <button value="1" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy btn_get_list_group">Lấy Danh Sách Group</button><br/>
+		    <span style="float:right">
+			    <select style="padding: 3px;" id="select_friends_type" class="input_mail _42ft _4jy0 _55pi _5vto _55_p _2agf _p _4jy3 _517h _51sy _no">
+			        <option value="select" selected="">Tùy Chọn</option>
+			        <option value="all">Chọn Tất Cả</option>
+			        <option value="cancel">Hủy Chọn Tất Cả</option>
+			    </select>
+			    <button value="1" id="import_to_list_id" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy" type="submit">Thêm Vào List</button>
+			</span>
+			<div>&nbsp</div>
+		     
+	     </div>
+	     <div id="list_group_select" class="cuon style-6" style="max-height: 300px;">
+
+	     </div>	     
+	     <div id="list_friends_select" class="cuon style-6" style="max-height: 300px;">
+
+	     </div>
+	</div>
+	<textarea class="hidden list_uid_friend"></textarea>
+	<div class="div_title" style="background: #fff;margin-bottom: 10px;">
+	    <div class="clearfix">
+	        <div class="left">
+	            <h3>Danh Sách Lỗi</h3>
+	        </div>
+	        <div class="right">
+
+	        </div>
+	    </div>
+	     <div class="popup_menu_list" id="list_post_erro">
+	     <textarea class="textarea_fb list_uid_post_error" style="width:100%"></textarea>
+	     </div>
+	</div> 
+</div>

@@ -1,0 +1,205 @@
+<div class="class_div_popup_ussv_logs hidden" id="popup_ussv_logs" style="">
+    <div class="div_popup_email_panel" style="width: 60%;">
+        <div style="opacity: 1;">
+            <form>
+                <div class="div_title">
+                    <div class="clearfix">
+                        <center style="width: 90%;float: left;">
+                            <select style="padding: 3px;float: left;" id="ussv_logs_select_panel" class="input_mail _42ft _4jy0 _55pi _5vto _55_p _2agf _p _4jy3 _517h _51sy _no">
+                                <option value="logs" selected="">Logs</option>
+                                <option value="tt">Thao Tác</option>
+                            </select>                            
+                            <h3 id="title_ussv_logs">Tiến Trình USSV</h3>
+                        </center>
+                        <div class="right">
+                            <a class="div_popup_close" role="button" href="#" id="div_ussv_logs_close" title="Đóng">Đóng</a>
+                        </div>
+                   </div>
+                </div>
+                <div class="div_popup_help">
+                    <div>
+                        <div class="_57xr">
+                            <div class="ussv_log_panel logs mbm">
+                                    <div class="popup_menu_list list_ussv_logs_panel1" style="display:none"> 
+                                        <span class="note_tientrinh_spam_account"></span> <br/>  
+                                        Status Logs POST (<span id="ussv_logs_total_row_post"></span>) :
+                                        <select style="padding: 3px;" id="btn_ussv_logs_view_listpost" class="input_mail _42ft _4jy0 _55pi _5vto _55_p _2agf _p _4jy3 _517h _51sy _no">
+                                        <option value="hide_post_logs" selected>Ẩn Logs Spam</option>
+                                        <option value="show_post_logs">Hiện Logs Spam</option>
+                                        <option value="only_friend_logs">Chỉ Hiện Logs Spam Lên Tường Bạn Bè</option>
+                                        <option value="only_group_logs">Chỉ Hiện Logs Lên Tường Group</option>
+                                         </select>                                                                   
+                                    </div>                                   
+                                    <div class="popup_menu_list list_ussv_logs_panel2" style="display:none;border-top: 1px solid rgb(213, 218, 230);">
+                              
+                                    </div>
+                                    <div id="ussv_logs_fb_captcha" class="cuon style-6" style="max-height: 300px;"></div>                                                            
+                                    <div style="padding: 10px;border-top: 1px solid rgb(220, 222, 227);max-height: 315px;" class="div_popup_text_loc_trung min_h cuon ussv_logs_txt">                                        
+                                    </div>
+                            </div>
+                            <div class="ussv_log_panel tt mbm hidden">
+                                <div class="div_title">
+                                    <div class="clearfix">
+                                        <div class="left">
+                                            <h3 id="ussv_logs_title_left_bottom">Thao Tác</h3>
+                                        </div>
+                                        <div class="right">
+                                        </div>
+                                    </div>                           
+                                    <div id="1">
+                                        <div class="ussv_logs_list_hanhdong popup_menu_list">
+                                            Tốc Độ Spam
+                                                <select style="padding: 3px;" id="ussv_logs_list_selec_many_spam" class="input_mail _42ft _4jy0 _55pi _5vto _55_p _2agf _p _4jy3 _517h _51sy _no">
+                                                    <option value="1">1 Friends/s</option>
+                                                    <option value="5">5 Friends/s</option>
+                                                    <option value="10">10 Friends/s</option>
+                                                    <option value="15">15 Friends/s</option>
+                                                    <option value="20">20 Friends/s</option>
+                                                    <option value="30">30 Friends/s</option>
+                                                    <option value="40">40 Friends/s</option>
+                                                    <option value="50">50 Friends/s</option>
+                                                    <option value="60">60 Friends/s</option>
+                                                    <option value="70">70 Friends/s</option>
+                                                    <option value="80">80 Friends/s</option>
+                                                    <option value="90" selected>90 Friends/s</option>
+                                                    <option value="100">100 Friends/s</option>
+                                                    <option value="500">500 Friends/s</option>
+                                                </select>
+                                            <br/>
+                                            Reset Dcom 3G<br/>
+                                            <span id="" class="btn_ussv_logs_rsdcom _42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy">Reset Dcom</span>
+                                            <span class="ussv_log_panel_rsdcom note" style="color: rgb(104, 149, 231);"></span>
+                                        </div>   
+                                    </div>                
+                                </div>
+                                <div class="popup_menu_list"> 
+                                    Link Ảnh: <input id="ussv_log_panel_tt_img" style="width:50%" value="" type="text" class="input_mail _51sy them" placeholder="Điền link ảnh bạn muốn đăng...">                         
+                                </div>    
+                                <div class="popup_menu_list">
+                                    <div class="">
+                                        <span style="float: left;">Nội Dung: </span>
+                                        <span id="thongke_tongdacheck" style="position: relative;">
+                                            <textarea style="width: 70%;padding:5px;height: 150px;" id="ussv_log_panel_tt_content" role="combobox" value="" type="text" class="input_mail" placeholder="Điền nội dung bạn muốn Đăng."></textarea>
+                                        </span>
+                                    </div>
+                                </div>                                
+                            </div>                                                                               
+                        </div>
+                        <div class="div_popup_nt_need">
+                            <div class="clearfix UIShareStage_PrivacyWarning"><i class="_8o _8s lfloat _ohe img sp_e0NUBoHLxu_ sx_e55dba"></i>
+                                <div class="_42ef">
+                                    <div class="UIShareStage_PrivacyWarning_text note_ussv_logs">Hãy nhìn trực diện vào các lỗi bên trên để giúp bạn dễ dàng kiểm soát hơn..</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="div_popup_bottom">
+                    <table class="div_popup_bottom_tab" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr class="_51mx">
+                                <td class="_51m- prs uiOverlayFooterMessage ussv_logs_td_logs">
+                                    <select style="padding: 3px;" id="sl_loc_ussv_logs_change_type" class="input_mail _42ft _4jy0 _55pi _5vto _55_p _2agf _p _4jy3 _517h _51sy _no">
+                                        <option value="all1" selected>Hiện Tất Cả Log</option>
+                                        <option value="ok">Chỉ Thành Công</option>
+                                        <option value="error">Chỉ Lỗi</option>
+                                        <option value="war">Chỉ Cảnh Báo</option>
+                                        <option value="kxd">Chỉ Không Xác Định</option>
+                                    </select>
+                                    <select style="padding: 3px;display:none" id="sl_loc_ussv_logs_change_method" class="input_mail _42ft _4jy0 _55pi _5vto _55_p _2agf _p _4jy3 _517h _51sy _no">
+                                        <option value="all2" selected>Tất cả hành động</option>
+                                        <option value="logs">Hành động trên USSV Logs</option>
+                                        <option value="check">Hành động Check</option>
+                                        <option value="spam">Hành động Spam</option>
+                                        <option value="fl">Hành động Fast Login</option>
+                                        <option value="rspam">Hành động Respam</option>
+                                        <option value="rcheck">Hành động Recheck</option>
+                                    </select>                                    
+                                    <select style="padding: 3px;" id="sl_loc_ussv_logs_match_email" class="input_mail _42ft _4jy0 _55pi _5vto _55_p _2agf _p _4jy3 _517h _51sy _no">
+                                        <option value="0">Tất Cả</option>
+                                    </select>                                        
+                                </td>
+                                <td class="_51m- uiOverlayFooterButtons _51mw logs ussv_logs_td_logs">
+                                    <span id="btn_ussv_show_acclist" style="" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy">Panel Account List</span>                                
+                                    <span id="btn_stop_c_logs_ussv" style="display:none" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy">STOP CHECK</span>
+                                    <span id="btn_start_c_logs_ussv" style="" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy">START CHECK</span>
+                                    <span id="btn_del_logs_ussv" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy">Xóa Log</span>
+                                </td>
+                                <td class="_51m- uiOverlayFooterButtons _51mw ussv_logs_td_tt hidden">
+                                    <span id="" class="btn_ussv_logs_updatespam _42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy">Cập Nhật Nội Dung Spam</span> <span class="ussv_log_panel_tt note" style="color: rgb(104, 149, 231);display: none;">Lấy dữ liệu thành công.</span>
+                                </td>                               
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>           
+        </div>
+    </div>  
+<div class="div_popup_help_left thaotacfbacc" style="max-height:95%">
+        <div class="div_title">
+            <div class="clearfix">
+                <div class="left">
+                    <h3 id="ussv_logs_title_left">
+                        <select style="padding: 3px;" id="ussv_logs_left_select" class="input_mail _42ft _4jy0 _55pi _5vto _55_p _2agf _p _4jy3 _517h _51sy _no">
+                        <option value="spam_list" selected>Spam List (<span id="fbacc_num_total_spam_list">0</span>)</option>
+                        <option value="acc_list">Acc List <span id="logs_total_fb_acc"></span></option>
+                        <option value="token_list">List Token</option>
+                        <option value="list_live">List Live</option>
+                        <option value="quyen_list">Quyền</option>
+                         </select>   
+                    </h3>
+                </div>
+                <div class="right">
+                    <img width="12" src="https://ussv.net/themes/img/questionmark.png">
+                </div>
+            </div>
+        </div> 
+        <div id="ussv_logs_list_spaming" class="ussv_logs_left_panel spam cuon style-6" style="max-height:400px;width: 99%;">
+        </div>
+        <div class="ussv_logs_left_panel acc hidden">
+            <span id="list_logs_fb_acc" class="" style="word-wrap:break-word;">
+            </span>
+            <a class="popup_menu_list logs_get_acc" id="1">
+                Lấy Danh Sách Acc
+            </a>
+            <a class="popup_menu_list logs_login_custom_acc">
+                Đăng Nhập 1 Tài Khoản<br/>
+                <input id="" style="width:40%" value="" type="text" class="input_email_custom_acc input_mail _51sy them" placeholder="Email">                
+                <input id="" style="width:35%" value="" type="password" class="input_pass_custom_acc input_mail _51sy them" placeholder="Mật Khẩu">
+                <span id="btn_go_custom_acc" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy">Go</span>               
+            </a>
+
+        </div>
+        <div class="ussv_logs_left_panel quyen hidden">
+            <span class="popup_menu_list ussv_aut_vip" style="padding: 5px;">Gói Basic</span> 
+            <span class="popup_menu_list ussv_aut_on_spam hidden" style="padding: 5px;">Bật Spam: Off</span> 
+            <span class="popup_menu_list ussv_aut_can_spam hidden " style="padding: 5px;">Quyền Spam: No</span>             
+            <span class="popup_menu_list ussv_aut_check_content hidden" style="padding: 5px;">Kiểm Định Nội Dung: No</span> 
+            <span class="popup_menu_list ussv_logs_list_500" style="display:none"></span>
+        </div> 
+        <div class="ussv_logs_left_panel token_list hidden">
+            <textarea style="width: 90%;margin: 10px;height: 150px;" id="ussv_log_panel_list_token" role="combobox" value="" type="text" class="input_mail"></textarea>
+            <input style="margin: 10px" id="" style="width:35%" value="" type="text" class="input_name_file_token_list input_mail _51sy" placeholder="Tên File">
+            <span id="btn_ussv_logs_save_token_list" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy">Save</span>              
+        </div> 
+        <div class="ussv_logs_left_panel list_live hidden">
+            <textarea style="width: 90%;margin: 10px;height: 150px;" id="ussv_log_panel_list_live" role="combobox" value="" type="text" class="input_mail"></textarea>
+            <input style="margin: 10px" id="" style="width:35%" value="" type="text" class="input_name_file_live_list input_mail _51sy" placeholder="Tên File">
+            <span id="btn_ussv_logs_save_live_list" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy">Save</span>                 
+        </div> 
+
+        <div class="div_title">
+            <div class="clearfix">
+                <div class="left">
+                    <h3 id="ussv_logs_title_left_bottom"></h3>
+                </div>
+                <div class="right">
+                <span id="total_check_fr">0</span> Friends
+                </div>
+            </div>
+        </div>        
+      
+</div> 
+             
+</div>

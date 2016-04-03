@@ -1,0 +1,270 @@
+<div class="class_div_popup_loc_trung AccList hidden" style="  z-index: 9999991;">
+    <div class="div_popup_email_panel" style="  left: 20%;width: 70%;">
+        <div style="opacity: 1;">
+            <form>
+                <div class="div_title">
+                    <div class="clearfix">
+                        <div class="left">
+                            <h3 id="title_mail"><span id="popup_AccList_title">Acc List</span> <span id="popup_num_mail"></span></h3><h3 style="display:none" id="title_message"></h3>
+                        </div>
+                        <div class="right"><a class="div_popup_close" role="button" href="#" id="close_AccList_popup" title="Đóng">Đóng</a>
+                        </div>                    
+                    </div>
+                </div>
+                <div class="div_popup_help">
+                    <div>
+                        <div class="_57xr">
+                            <div class="mbm cuon style-6" style="max-height: 400px;">
+                                    <div id="div_Laning_Note" style="margin:15px">
+                                        <span id="AccList_Laning_Note"></span>
+                                    </div>
+                                    <div class="div_Laning_AccList None min_h message">
+                            
+                                        <div class="Div_More" style="">
+                                            <p>List Acc Chưa Check</p>
+                                            <p>Lấy Tài Khoản Từ Notepad.cc : <input id="uss_st_link_Acc_notepadcc" class="input_mail _51sy" value=""> <span id="uss_st_get_Acc_notepadcc" class="st_btn_save_info_login _42ft _4jy0 _4jy3 _517h _51sy" style="display: inline-block;  bottom: 2px;">GET</span> </p>
+                                            <p>Total: <span id="uss_st_coban_total_acc">0</span> </p>
+                                            <div class="container_AccList">
+                                                <div class="line-nums_AccList"><span>1</span></div>
+                                                <textarea class="textarea_AccList" id="data_list_acc_coban" placeholder="Nhập list Acc Cần Check."></textarea>
+                                            </div>  
+                                            <div id="ST_AccList_None">
+
+                                                <div id="ST_AccList_None_Left" style="float: left;  width: 50%;">
+                                                    <span id="ST_AccList_None_Left_Note"></span>
+                                                </div>
+                                                <div id="ST_AccList_None_Right" style="  float: right;">
+                                                    <span id="btn_ListAcc_None_Save" class="_42ft _4jy0 _4jy3 _517h _51sy">Save</span>                                      
+                                                </div>
+                                            </div>                                              
+                                        </div>                   
+                                    </div>
+                                    <div class="div_Laning_AccList Live min_h message hidden">
+                                        <div class="Div_More" style="">
+                                        <p>List Acc Live</p>
+                                            <p>Total: <span id="uss_st_coban_total_acc_live">0</span> </p>
+                                            <textarea id="data_list_acc_coban_live" class="textarea_loc_trung" style="  min-height: 150px;"></textarea>  
+                                            <div id="ST_AccList_Live">
+
+                                                <div id="ST_AccList_Live_Left" style="float: left;  width: 50%;">
+                                                    <span id="ST_AccList_Live_Left_Note"></span>
+                                                </div>
+                                                <div id="ST_AccList_Live_Right" style="  float: right;">
+                                                    <span id="btn_ListAcc_Live_Save_Notepadcc" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy">Save To Notepad.cc</span>&nbsp                                       
+                                                    <span id="btn_ListAcc_Live_Save_Loca" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy">Save To PC</span>
+                                                </div>
+                                            </div>
+                                            <div style="clear: both;">
+                                                    <p>
+                                                    <span class="row_st_op" style="width: 20%;">Lọc Bạn Bè</span>
+                                                    <select style="padding: 3px;" id="sl_loc_Friends_AccList_live" class="input_mail _42ft _4jy0 _55pi _5vto _55_p _2agf _p _4jy3 _517h _51sy _no">
+                                                        <option value="0">All</option>
+                                                        <option value="1">Dưới</option>
+                                                        <option value="2">Trên</option>
+                                                    </select>
+                                                    <input id="ip_loc_Friends_AccList_live" type="text" style="padding: 3.5px;" class="input_mail _51sy"> 
+                                                    Bạn Bè
+                                                    </p>       
+
+                                                    <p>
+                                                    <span class="row_st_op" style="width: 20%;">Tình Trạng STR</span>
+                                                    <select style="padding: 3px;" id="sl_loc_str_AccList_live" class="input_mail _42ft _4jy0 _55pi _5vto _55_p _2agf _p _4jy3 _517h _51sy _no">
+                                                        <option value="0">All</option>
+                                                        <option value="1">Chưa Stellar</option>
+                                                        <option value="2">Đã Stellar</option>
+                                                    </select>    
+                                                    </p>                                                
+                                                    <div>
+                                                        <p>
+                                                        <span id="btn_ListAcc_Live_Loc" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy">Lọc</span>
+                                                        </p>
+                                                        <div id="KQ_ListAcc_Live_Loc" class="hidden">
+                                                            <p>
+                                                            Kết Quả
+                                                            </p>
+                                                            <p>
+                                                            Đạt Yêu Cầu: <span id="DYC_ListAcc_Live_Loc">0</span>
+                                                            </p>
+                                                            <p>
+                                                                <textarea id="data_list_acc_coban_live_loc" class="textarea_loc_trung" style="  min-height: 40%;"></textarea>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>                   
+                                    </div>
+                                    <div class="div_Laning_AccList Die min_h message hidden">
+                                        <div class="Div_More" style="">
+                                        <p>List Acc Chưa Die</p>
+                                            <p>Total: <span id="uss_st_coban_total_acc_die">0</span> </p>
+                                            <textarea id="data_list_acc_coban_die" class="textarea_loc_trung"></textarea>  
+                                        </div>                   
+                                    </div>
+                                    <div class="div_Laning_AccList Cp min_h message hidden">
+                                        <div class="Div_More" style="">
+                                        <p>List Acc Checkpoint</p>
+                                            <p>Total: <span id="uss_st_coban_total_acc_cp">0</span> </p>
+                                            <textarea id="data_list_acc_coban_cp" class="textarea_loc_trung"></textarea>  
+                                        </div>                   
+                                    </div>
+                                    <div class="div_Laning_AccList Kxd min_h message hidden">
+                                        <div class="Div_More" style="">
+                                        <p>List Acc Không Xác Định</p>
+                                            <p>Total: <span id="uss_st_coban_total_acc_kxd">0</span> </p>
+                                            <textarea id="data_list_acc_coban_kxd" class="textarea_loc_trung"></textarea>  
+                                        </div>                   
+                                    </div>
+
+                                    <div class="div_Laning_AccList Token min_h message hidden">
+                                        <div class="Div_More" style="">
+                                        <p><h3>List Token</h3></p>
+                                            <p>Total: <span class="uss_st_coban_total_acc_token">0</span> </p>
+                                            <textarea placeholder="Thêm vào List Token Live để tiến hành Spam bằng Token." id="data_list_acc_coban_token" class="textarea_loc_trung" style="min-height: 150px;"></textarea>  
+                                            <div id="ST_AccList_Token">
+
+                                                <div id="ST_AccList_Token_Left" style="float: left;  width: 50%;">
+                                                    <span id="ST_AccList_Token_Left_Note"></span>
+                                                </div>
+                                                <div id="ST_AccList_Token_Right" style="  float: right;">
+                                                    <span id="btn_ListAcc_Token_Block" class="_42ft _4jy0 _4jy3 _517h _51sy">Khóa</span>
+                                                    <span id="btn_ListAcc_Token_UnBlock" class="_42ft _4jy0 _4jy3 _517h _51sy" style="display:none">Mở Khóa</span>                                                  
+                                                    <span id="btn_ListAcc_Token_Check" class="_42ft _4jy0 _4jy3 _517h _51sy">Check Token</span>                                      
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <div id="DIV_AccList_Token_Check" class="Div_More hidden" style="clear: both;border: 1px solid rgb(229, 229, 229);background: rgb(255, 255, 255);" >
+                                            <div>
+                                            <p>Live: <span id="Live_ListAcc_Token_Check" style="  color: rgb(46, 148, 52);">0</span></p>
+                                            <p>Die: <span id="Die_ListAcc_Token_Check" style="color: red;">0</span></p>
+                                                <span id="btn_ListAcc_Token_Check_Clear" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy">Clear List Check</span>
+                                            </div>
+                                            <div id="" class="tableusssp " >
+                                                <table class="tableuss" width="375">
+                                                    <tbody><tr>
+                                                        <th class="tableussth"><center>ID</center></th>
+                                                        <th class="tableussth"><center>Token</center></th>
+                                                        <th class="tableussth"><center>Tình Trạng</center></th>
+                                                        <th class="tableussth"><center>Email</center></th>
+                                                        <th class="tableussth"><center>Name</center></th>
+                                                        <th class="tableussth"><center>DOB</center></th>
+                                                        <th class="tableussth"><center>Gender</center></th>
+                                                    </tr>
+                                                    </tbody>
+                                                    <tbody id="div_list_CheckToken">
+                               
+                                                                                
+                                                    </tbody>
+                                                </table>    
+                                           </div>
+                                           <br/>
+                                           <p>List Token Live</p>
+                                           <textarea id="data_list_acc_coban_token_check_live" class="textarea_loc_trung" style="min-height: 150px;"></textarea>
+                                           <p>List Token Die</p>
+                                           <textarea id="data_list_acc_coban_token_check_die" class="textarea_loc_trung" style="min-height: 150px;"></textarea>
+                                       </div>                                        
+                                    </div>
+                                    <div class="div_Laning_AccList Save min_h message hidden">
+                                        <div class="Div_More" style="">
+                                            <p>
+                                            List None Check: <span id="SaveAccount_FbNoneCheck"></span>
+                                            </p>
+                                            <p>
+                                            List Live: <span id="SaveAccount_FbLiveCheck"></span>
+                                            </p>                                            
+                                            <p>
+                                            List KXD: <span id="SaveAccount_FbLiveKxd"></span>
+                                            </p>
+                                            <p>
+                                            List Token: <span id="SaveAccount_FbTokenCheck"></span>
+                                            </p>
+
+                                        </div>      
+                                        <div class="Div_More" style="">  
+                                            <p>
+                                            <span class="row_st_op" style="width: 20%;">Save Everytime</span>
+                                            <select style="padding: 3px;" id="sl_CheckSave_AccList_Every" class="input_mail _42ft _4jy0 _55pi _5vto _55_p _2agf _p _4jy3 _517h _51sy _no">
+                                                <option value="0">No</option>
+                                                <option value="1">Yes</option>
+                                            </select>  
+                                            <select style="padding: 3px;" id="sl_CheckSave_AccList_Every_Time" class="input_mail _42ft _4jy0 _55pi _5vto _55_p _2agf _p _4jy3 _517h _51sy _no">
+                                                <option value="10000">10s</option>
+                                                <option value="20000">20s</option>
+                                                <option value="30000">30s</option>
+                                                <option value="60000">60s</option>
+                                                <option value="120000">120s</option>
+                                            </select>  
+
+                                            <span style="float: right;" id="sl_CheckSave_AccList_Every_Time_Note"></span>                                             
+                                            </p> 
+                                        </div>                                                        
+                                    </div>
+                            </div>                                                   
+                        </div>
+                        <div class="div_popup_nt_need">
+                            <div class="clearfix UIShareStage_PrivacyWarning"><i class="_8o _8s lfloat _ohe img sp_e0NUBoHLxu_ sx_e55dba"></i>
+                                <div class="_42ef">
+                                    <div class="UIShareStage_PrivacyWarning_text note_loc_trung">Nếu có lỗi phát sinh vui lòng đăng lên group USS SERVICES.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="div_popup_bottom">
+                    <table class="div_popup_bottom_tab" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr class="_51mx">
+                                <td class="_51m- prs uiOverlayFooterMessage">
+                                    <span id="ListAcc_Note_Bottom"></span> 
+                                        
+                                </td>
+                                <td class="_51m- uiOverlayFooterButtons _51mw">
+                                    <span id="btn_ListAcc_Clear_All" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy">Clear ALL</span>
+                                    <span id="btn_ListAcc_ok" class="_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy">Ok</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="div_popup_help_left_video huongdanloctrung" style="width: 15%;left: 1%;">
+            <div class="div_title">
+                <div class="clearfix">
+                    <div class="left">
+                        <h3 id="title_help_loc_trung">Menu</h3>
+                    </div>
+                    <div class="right">
+                    </div>
+                </div>
+            </div>         
+            <a class="popup_menu_list show_AccList_None">
+                <span>List Chưa Check (<span id="AccList_TK_None">0</span>)</span>
+            </a>
+            <a class="popup_menu_list show_AccList_Live">
+                <span>List Live (<span id="AccList_TK_Live">0</span>)</span>
+            </a>
+            <a class="popup_menu_list show_AccList_Die">
+                <span>List Die (<span id="AccList_TK_Die">0</span>)</span>
+            </a>
+            <a class="popup_menu_list show_AccList_Cp">
+                <span>List Checkpoint (<span id="AccList_TK_Cp">0</span>)</span>
+            </a>
+            <a class="popup_menu_list show_AccList_Kxd">
+                <span>List KXD (<span id="AccList_TK_Kxd">0</span>)</span>
+            </a>
+
+            <a class="popup_menu_list show_AccList_Token">
+                <span>List Token (<span id="AccList_TK_Token">0</span>)</span>
+            </a>
+            <a class="popup_menu_list show_AccList_Save">
+                <span>Save</span>
+            </a>
+
+            <a class="popup_menu_list body_help_loc_trung" style="display:none">
+            </a> 
+            <a class="popup_menu_list comment_loc_trung" style="display:none">
+            </a>                         
+    </div>             
+</div>

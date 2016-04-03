@@ -1,0 +1,1029 @@
+.hidden {
+  display: none;
+}
+.left {
+  float: left;
+  width:50%
+}
+.right {
+  float: right;
+}
+
+a {
+  text-decoration: none;
+  color: #3b5998;
+  word-wrap:break-word;
+
+}
+p {
+  word-wrap:break-word;
+}
+a:hover {
+  text-decoration: none;
+  color: #49261D;
+}
+
+a:focus { 
+  outline: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.link_admin {
+  font-size: 14px;
+}
+
+.div_menu_uss {
+position: fixed;  
+bottom: 0%;  
+right: 0%;  
+margin: 0px auto 1px;  
+z-index: 999999;  
+width: 20%;  padding: 0px;
+color: rgb(26, 142, 41);  font-size: 14px;  background: rgb(255, 255, 255);
+border-radius: 2px;
+box-shadow: 0px 5px 10px rgb(116, 116, 122);
+}
+.div_menu_uss2 {
+position: fixed;  
+bottom: 0%;  
+right: 0%;  
+margin: 0px auto 1px;  z-index: 999999;  
+width: 20%;  padding: 0px;
+color: rgb(26, 142, 41);  font-size: 14px;  background: rgb(255, 255, 255);
+border-radius: 2px;
+width: auto;
+background: rgba(240, 248, 255, 0.26);
+}
+.div_menu_uss2:hover {
+background: rgb(237, 237, 237);
+}
+
+#div_pnc_right {
+float: left;
+width: 70%;
+color: white;
+font-size: 14px; 
+background: rgba(255, 255, 255, 1);  
+border: 1px solid;  
+border-color: #e5e6e9 #dfe0e4 #d0d1d5;  
+-webkit-border-radius: 3px;
+padding: 12px;
+position: relative;  
+word-wrap: break-word;
+height: 100%;
+box-shadow: 0px 0px 5px 3px #CCC9CF;
+background: #eedfcc url(//ussv.net/themes/img/br_cp.jpg) no-repeat center top;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+background-size: cover;
+float: left;
+
+}
+
+.div_mini_spam {
+color: rgb(26, 142, 41);
+font-size: 14px;
+float: left;
+background: #fff;
+border: 1px solid;
+border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+-webkit-border-radius: 3px;
+margin-bottom: 10px;
+padding: 12px;
+top: 1px;
+position: relative;	
+}
+
+.class_viewimg {
+background-color: rgba(0, 0, 0, .4);bottom: 0;  left: 0;  position: fixed;  right: 0;  top: 0;z-index: 999999;	
+}
+.class_view_thongke_check {
+background-color: rgba(0, 0, 0, .4);bottom: 0;  left: 0;  position: fixed;  right: 0;  top: 0;z-index: 999999;	
+}
+.div_them_acc {
+color: rgb(26, 142, 41);
+font-size: 14px;
+background: #fff;
+border: 1px solid;
+border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+-webkit-border-radius: 3px;
+padding: 12px;
+position: fixed;
+top: 25%;
+left: 60%;
+right: 50%;
+width: 620px;
+margin: 0 -320px;
+z-index: 999999;	
+}
+
+.div_view_log {
+color: rgb(26, 142, 41);
+font-size: 14px;
+background: #fff;
+border: 1px solid;
+border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+-webkit-border-radius: 3px;
+padding: 12px;
+position: fixed;
+top: 5%;
+left: 60%;
+right: 50%;
+width: 720px;
+margin: 0 -320px;
+z-index: 999999;	
+}
+
+.div_info_view_log {
+color: rgb(205, 142, 109);
+border-top: 1px solid #e1e2e3;
+margin: 0;
+margin-top: 5px;
+background-color: rgb(244, 244, 244);
+padding: 5px;
+}
+
+.div_thongke_check {
+color: rgb(26, 142, 41);
+font-size: 14px;
+background: #fff;
+border: 1px solid;
+border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+-webkit-border-radius: 3px;
+position: fixed;
+top: 5%;
+left: 60%;
+right: 50%;
+margin: 0 -320px;
+z-index: 999999;	
+width: 500px;padding: 0px;
+}
+
+.progress-container {
+	  display:inline-block;
+  	margin:40px auto;
+  	position:relative;
+	  border:1px solid rgba(0,0,0,0.25);
+	  border-radius:3px;
+	  -webkit-border-radius:3px;
+	  -moz-border-radius:3px;
+}
+.progress-bar {
+    margin:0;
+    height:36px;
+    line-height:36px;
+    text-align:left;
+    text-overflow:clip;
+    overflow:hidden;
+    z-index:0;
+    &.negative {
+	      padding-left:50px;
+	      margin-right:50px;
+	      width:100%;
+	      background:#fff;
+	      color:#000;
+	      z-index:1;
+    }
+    &.positive {
+	      width:0;
+	      position:absolute;
+	      background:#2ba0c5;
+	      color:#fff;
+	      z-index:10;
+	      span {
+		        padding-left:50px; /* need this span to fill in the left padding, otherwise it would be background colored */
+	      }
+    }
+}
+
+
+.div_info_help {
+margin-left: 8px;
+color: rgb(26, 142, 41);
+font-size: 14px;
+background: #fff;
+border: 1px solid;
+border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+-webkit-border-radius: 3px;
+margin-bottom: 10px;
+padding: 12px;
+top: 5px;
+position: relative;
+width: 96%;
+word-wrap: break-word;
+}
+
+.danhgia{
+color: rgb(33, 123, 23);	
+}
+.div_danhgia {
+	border-top: 1px solid #e1e2e3;  margin: 0;color: rgb(68, 68, 68);padding: 5px;
+}
+
+
+.div_title {
+	background-color: #f6f7f8;
+	border-bottom: 1px solid #e5e5e5;
+	-webkit-border-radius: 3px 3px 0 0;
+	color: #141823;
+	font-weight: bold;
+	line-height: 19px;
+	padding: 10px 12px;	
+}
+
+
+
+
+
+
+
+
+
+
+.nav-uss a {
+  display: block;
+  background-color: #f7f7f7;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+  background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  color: #a7a7a7;
+  margin: 36px;
+  width: 144px;
+  height: 144px;
+  position: relative;
+  text-align: center;
+  line-height: 144px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+}
+
+.nav-uss a:before {
+  content: "";
+  display: block;
+  background: #fff;
+  border-top: 2px solid #ddd;
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  bottom: -18px;
+  right: -18px;
+  z-index: -1;
+  border-radius: 50%;
+  box-shadow: inset 0px 8px 48px #ddd;
+}
+
+.nav-uss a:hover {
+  text-decoration: none;
+  color: #555;
+  background: #f5f5f5;
+}
+
+.div_spam {
+color: rgb(26, 142, 41);
+font-size: 14px;
+background: rgba(19, 10, 10, 0.29);
+border: 1px solid;
+border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+-webkit-border-radius: 3px;
+padding: 12px;
+position: fixed;
+bottom: 0px;
+width: 100%;
+right: 0px;
+width: 71%;
+z-index: 999999;	
+}
+#div_note_spaming {
+background-color: rgba(27, 24, 24, 0.66); border: 1px solid rgba(65, 85, 92, 0.96); padding: 3px;width: 99%;	
+}
+
+
+
+/* USSV HELP POPUP */
+.class_div_popup_help {
+background-color: rgba(0, 0, 0, .4);bottom: 0;  left: 0;  position: fixed;  right: 0;  top: 0;z-index: 999999;	
+}
+
+.div_popup_help_panel {
+color: rgb(26, 142, 41);
+font-size: 14px;
+background: #fff;
+border: 1px solid;
+border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+-webkit-border-radius: 3px;
+position: fixed;
+top: 5%;
+left: 30%;
+margin: 0 auto 40px;
+z-index: 999999;	
+width: 600px;padding: 0px;
+}
+.div_popup_nt_ex {
+	border-bottom: 1px solid #d9d9d9;
+	line-height: 19px;
+	padding: 10px 12px;
+	max-height: 450px;
+	overflow:auto;	
+	color: rgb(63, 100, 131);
+}
+
+.div_popup_nt_need {
+font-family: 'Helvetica Neue', Helvetica, Arial, 'lucida grande',tahoma,verdana,arial,sans-serif;
+font-size: 12px;
+margin: 6px 10px;	
+color: rgb(87, 12, 46);
+}
+
+.div_popup_close1 {
+background-image: url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y7/r/THmQHXezujd.png);
+background-repeat: no-repeat;
+background-size: auto;
+background-position: 0 -52px;
+
+cursor: pointer;
+display: inline-block;
+text-decoration: none;
+white-space: nowrap;
+
+background-color: transparent;
+border: 0 none;
+cursor: pointer;
+font-size: 0 !important;
+overflow: hidden;
+padding: 0;
+vertical-align: middle;
+
+height: 12px;
+width: 12px;	
+}
+.div_popup_close {
+	background-image: url(https://www.facebook.com/rsrc.php/v2/y2/r/67g7JcLdRXw.png);
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: -80px -446px;
+
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	white-space: nowrap;
+
+	background-color: transparent;
+	border: 0 none;
+	cursor: pointer;
+	font-size: 0 !important;
+	overflow: hidden;
+	padding: 0;
+	vertical-align: middle;
+
+	height: 12px;
+	width: 12px;	
+	
+}
+.div_popup_close:hover{
+	background-image:url(https://www.facebook.com/rsrc.php/v2/y2/r/67g7JcLdRXw.png);
+	background-repeat:no-repeat;
+	background-size:auto;
+	background-position:-106px -446px
+};
+
+
+.div_popup_help {
+	background-color: rgb(255, 255, 255);
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.div_popup_bottom {
+background-color: rgb(255, 255, 255);
+padding: 12px 0px;
+text-align: right;
+border-top: 1px solid rgb(220, 222, 227);
+margin: 0px 12px;	
+}
+.div_popup_bottom_tab {
+border: 0;
+border-collapse: collapse;
+border-spacing: 0;
+width: 100%;
+
+}
+.div_popup_help_left {
+position: fixed;  top: 5%;  
+left: 9.5%;  
+margin: 0px auto 40px;  z-index: 999999;  
+width: 20%;  padding: 0px;
+color: rgb(26, 142, 41);  font-size: 14px;  background: rgb(255, 255, 255);
+border-radius: 2px;
+}
+.div_popup_help_right {
+position: fixed;  top: 5%;  
+right: 9.5%;  
+margin: 0px auto 40px;  z-index: 999999;  
+width: 20%;  padding: 0px;
+color: rgb(26, 142, 41);  font-size: 14px;  background: rgb(255, 255, 255);
+border-radius: 2px;
+}
+.popup_menu_list {
+padding-bottom: 8px;
+padding-top: 8px;
+display: block;
+position: relative;
+border-bottom: none;
+padding: 12px;
+cursor: pointer;
+text-decoration: none;
+cursor: pointer;
+text-decoration: none;
+color: #9197a3;
+}
+.popup_menu_list:hover {
+background: rgb(229, 241, 251);
+cursor: pointer;
+text-decoration: none;
+}
+.popup_menu_list_select {
+background: rgb(229, 241, 251);
+cursor: pointer;
+text-decoration: none;
+}
+.div_btn_fb {
+text-decoration: none;
+padding: 0 8px;
+cursor: pointer;
+display: inline-block;
+text-decoration: none;
+white-space: nowrap;
+
+background: #f6f7f8 url(/rsrc.php/v2/y1/r/wL6VQj7Ab77.png) repeat-x;
+border: 1px solid;
+-webkit-border-radius: 2px;
+-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+-webkit-box-sizing: content-box;
+font-family: 'Helvetica Neue', Helvetica, Arial, 'lucida grande',tahoma,verdana,arial,sans-serif;
+-webkit-font-smoothing: antialiased;
+font-weight: bold;
+position: relative;
+text-align: center;
+vertical-align: middle;
+background-position: 0 -335px;
+font-size: 12px;
+line-height: 22px;
+
+color: #fff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+}
+
+
+
+
+/* DIV PANEL EMAIL */
+.class_div_popup_email {
+background-color: rgba(0, 0, 0, .4);bottom: 0;  left: 0;  position: fixed;  right: 0;  top: 0;z-index: 999999;  
+}
+
+.div_popup_email_panel {
+color: rgb(26, 142, 41);
+font-size: 14px;
+background: #fff;
+border: 1px solid;
+border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+-webkit-border-radius: 3px;
+position: fixed;
+top: 5%;
+left: 30%;
+margin: 0 auto 40px;
+z-index: 999999;  
+width: 700px;
+padding: 0px;
+}
+
+.tab_row_mail {
+  border-bottom: 1px solid rgb(237, 238, 241);
+  padding: 3px;
+}
+.tab_row_h4 {
+font-size: 13px;
+color: rgb(80, 120, 154);  
+}
+.tab_row_h4:hover{
+color: rgb(102, 152, 208);
+}
+
+.min_h {
+  min-height: 200px;
+  position: relative;
+}
+.cuon {
+  overflow: auto;
+}
+.load_more_mail {
+  margin-bottom: 1px;
+  position: relative;
+  bottom: 1px;
+  width: auto;
+  text-align: center;
+  background: rgb(248, 248, 248);
+  padding: 3px;  
+}
+.load_more_mail:hover{
+  background: rgb(238, 245, 252);
+}
+.a_load_more {
+  color: rgb(134, 163, 190);
+}
+.a_load_more:hover{
+   color: rgb(101, 125, 149)
+}
+
+/* IDV Tao Mail */
+.class_div_popup {
+background-color: rgba(0, 0, 0, .4);bottom: 0;  left: 0;  position: fixed;  right: 0;  top: 0;z-index: 999999;  
+}
+.div_tao_mail {
+  width: 450px;
+  left: 40%;
+}
+.input_mail {
+border-color: rgba(240, 248, 255, 0.82);
+font-size: 15px;
+color: rgb(121, 141, 159);
+padding: 2px 2px 2px;
+border: 1px solid #d3d6db;
+}
+.wait_cr_mail{
+  display: none;
+}
+.page_select {
+padding-left: 5px;
+padding-right: 5px;
+background: rgb(82, 154, 211); 
+color: rgb(251, 251, 251);
+}
+.page_noselect:hover {
+background: rgb(225, 234, 241);
+padding-left: 5px;
+padding-right: 5px;
+color: rgb(104, 124, 141);
+}
+.row_mail_select {
+color: rgb(53, 156, 206);
+background: rgb(238, 246, 248);
+}
+
+/* Div Message Mail */
+.max_height_div_mail {
+  width: 65%;
+}
+.icon_mail_back {
+position: relative;
+top: 4px;  
+}
+.info_mail_mesage{
+border-bottom: 1px solid #d9d9d9;
+padding: 10px 12px;  
+}
+.view_info_mail_time {
+float: right;
+color: rgb(126, 130, 133);
+font-size: 12px;
+}
+
+
+
+
+
+/* DIV LOC */
+.class_div_popup_loc_trung {
+background-color: rgba(0, 0, 0, .4);bottom: 0;  left: 0;  position: fixed;  right: 0;  top: 0;z-index: 999999;  
+}
+.textarea_loc_trung {
+width: 99%;
+margin: 0px;
+min-height: 280px;  
+}
+
+
+.div_popup_help_left_video {
+position: fixed;  top: 5%;   
+margin: 0px auto 40px;  z-index: 999999;   
+padding: 0px;
+color: rgb(26, 142, 41);  font-size: 14px;  background: rgb(255, 255, 255);
+border-radius: 2px;
+width: 28%;
+left: 1%;
+}
+
+
+
+/* DIV Tiến Trình Thay Mail 
+ce = change email
+
+*/
+.div_change_email_log{
+  margin-bottom: 2px;
+  border: 1px solid rgb(220, 222, 227);
+  background: rgba(219, 230, 226, 0);
+  padding: 3px;
+  padding-top: 5px;
+  font-size: 12px;  
+  max-height: 350px;
+}
+.div_change_email_log.ok {
+color: rgb(30, 156, 58);  
+}
+.div_change_email_log.war {
+color: rgb(212, 110, 69);
+}
+.div_change_email_log.kxd {
+color: rgb(191, 191, 196); 
+}
+.div_change_email_log.error {
+color: rgb(244, 27, 44);
+background-color:rgba(243, 48, 103, 0.13);
+}
+.div_change_email_time {
+float: left;
+width: 10%;
+color: rgb(148, 148, 148);  
+}
+.row_icon_acc_ce_left{
+position: absolute;
+left: 3px;
+}
+.row_icon_acc_ce_right{
+position: absolute;
+right: 1;
+}
+.row_txt_acc_ce_left{
+margin-left: 10px;
+}
+.ce_acc_page {
+display: block;
+position: relative;
+border-bottom: none;
+padding: 12px;  
+}
+
+.ce_load_more {
+  color: rgb(134, 163, 190);
+}
+.ce_load_more:hover{
+   color: rgb(101, 125, 149)
+}
+.ce_page_select {
+padding-left: 5px;
+padding-right: 5px;
+background: rgb(82, 154, 211); 
+color: rgb(251, 251, 251);
+}
+.ce_page_noselect:hover {
+background: rgb(225, 234, 241);
+padding-left: 5px;
+padding-right: 5px;
+color: rgb(104, 124, 141);
+}
+
+
+/* DIV USSV LOGS*/
+.class_div_popup_ussv_logs {
+background-color: rgba(0, 0, 0, .4);bottom: 0;  left: 0;  position: fixed;  right: 0;  top: 0;z-index: 999999;  
+}
+.div_ussv_logs_txt{
+  margin-bottom: 2px;
+  border: 1px solid rgb(220, 222, 227);
+  background: rgba(219, 230, 226, 0);
+  padding: 3px;
+  padding-top: 5px;
+  font-size: 12px;  
+  max-height: 350px;
+}
+.div_ussv_logs_txt.ok {
+color: rgb(30, 156, 58);  
+}
+.div_ussv_logs_txt.war {
+color: rgb(212, 110, 69);
+}
+.div_ussv_logs_txt.kxd {
+color: rgb(191, 191, 196); 
+}
+.div_ussv_logs_txt.error {
+color: rgb(244, 27, 44);
+background-color:rgba(243, 48, 103, 0.13);
+}
+.div_ussv_logs_txt.post_fr_error {
+color: rgb(244, 27, 44);
+background-color:rgba(243, 48, 103, 0.13);
+}
+.div_ussv_logs_txt.post_gr_error {
+color: rgb(244, 27, 44);
+background-color:rgba(243, 48, 103, 0.13);
+}
+.div_popup_logs_left_bt {
+position: fixed;  
+top: 35%;  
+left: 9.5%;  
+margin: 0px auto 40px;  
+z-index: 999999;  
+width: 20%;  padding: 0px;
+color: rgb(26, 142, 41);  font-size: 14px;  background: rgb(255, 255, 255);
+border-radius: 2px;
+}
+.ussv_post_setting_left {
+  margin-left: 1%;
+  float: left;
+  width: 35%;  
+  color: rgb(20, 21, 123);
+}
+.div_ussv_logs_spam_info {
+  border-top: 1px solid rgb(220, 222, 227);
+  padding: 5px;
+}
+.div_ussv_logs_spam_info_table {
+border-top: 1px solid #e1e2e3;  
+margin: 0;
+}
+.font_11{
+font-size: 11px;
+color: rgb(163, 162, 174);  
+}
+.acc_logs {
+margin-left: 10px;border: 1px rgb(249, 249, 249);color: rgb(20, 56, 86);  
+}
+.logs_page_select {
+padding-left: 5px;
+padding-right: 5px;
+background: rgb(82, 154, 211); 
+color: rgb(251, 251, 251);
+}
+.logs_page_noselect:hover {
+background: rgb(225, 234, 241);
+padding-left: 5px;
+padding-right: 5px;
+color: rgb(104, 124, 141);
+}
+
+
+
+/*
+ICON FB
+
+*/
+
+.ussv_div_icon_chat {
+    position: absolute;
+    bottom: 0px;
+    z-index: 99;
+    left: -301px;
+    width: 300px;
+    min-height: 200px;
+    background: rgb(255, 255, 255);  border-radius: 2px;  box-shadow: rgb(116, 116, 122) 0px 5px 10px;  
+}
+.ussv_div_icon_cmt {
+    position: absolute;
+    bottom: 0px;
+    z-index: 99;
+    right: -320px;
+    width: 300px;
+    min-height: 200px;
+    background: rgb(255, 255, 255);  border-radius: 2px;  box-shadow: rgb(116, 116, 122) 0px 5px 10px;  
+}
+.ussv_div_panel_safe {
+    position: absolute;
+    bottom: 0px;
+    z-index: 99;
+    left: -301px;
+    width: 300px;
+    min-height: 200px;
+    background: rgb(255, 255, 255);  border-radius: 2px;  box-shadow: rgb(116, 116, 122) 0px 5px 10px; 
+}
+
+
+.list_icon{
+  padding: 5px
+}
+.icon_code{
+  width: 16px;
+  height: 16px
+}
+.icon_code:hover{
+  background: rgb(225, 225, 225);
+}
+
+
+
+/*
+
+Panel Setting
+
+*/
+
+.div_row_field {
+padding: 5px 0;
+/*border-bottom: 1px solid #e1e2e3;*/
+word-wrap: break-word;
+}
+
+.setting.crUrlLogin{
+  padding: 10px 14px;
+}
+.row_st {
+  color: rgb(145, 151, 163);
+  text-decoration: none;
+  padding: 9px;  
+}
+.row_st_op {
+float: left;width: 30%; padding: 3px;  
+}
+.row_st_more{
+    width: 95%;
+    margin: 3px;
+  padding: 10px;
+  float: left;
+  font-size: 12px;
+  background: rgb(250, 251, 252);  
+}
+/*
+Panel Safe Chat
+
+*/
+.Panel_Safe_Center{
+  padding: 10px;
+}
+
+
+.div_msg_sf_title{
+    
+    position: absolute;
+    padding: 5px;
+    
+    width: 99%;
+    background: rgba(239, 242, 244, 0.12);
+    color: rgb(58, 190, 60);  
+}
+
+
+/*   
+Panel Timeline Post
+*/ 
+.div_row_fr_list_top{
+  border-bottom: 1px solid rgb(229, 229, 229);
+  padding-bottom: 10px;
+}
+.div_row_fr_list{
+  padding: 2px;
+  width: 70px;  
+  height: 60px;
+  display: inline-block;
+  max-height: 200px;
+  margin-bottom: 4px;
+  margin-top: 4px;  
+  border-radius: 5px;
+}
+.div_row_fr_list:hover{
+  box-shadow: rgb(212, 239, 232) 0px 0px 1px 1px;
+}
+.input_friend
+{
+
+}
+.div_row_fr_list img{
+height: 55px;  
+width: 65px;
+margin-right: 2px;
+margin-left: 2px;
+}
+.div_row_fr_list span
+{
+  position: absolute;
+  font-size: 10px;
+  color: rgb(19, 132, 29);
+}
+.div_row_fr_list a
+{
+  position: absolute;
+  bottom: 17%;
+  left: 5%;  
+  font-size: 12px;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;  
+  background: rgba(41, 42, 44, 0.38);
+}
+
+.fn {
+  border: 1px solid;
+  border-color: #C7DAC9;
+  border-shadow: 20px;
+  box-shadow: 0px 0px 1px 1px #24BB93;  
+}
+.fn_error{
+  border: 1px solid;
+  border-color: #C7DAC9;
+  border-shadow: 20px;
+  box-shadow: rgb(247, 16, 69) 0px 0px 1px 1px;  
+}
+.div_panel_post_note{
+  margin: 5px;
+  color: rgb(44, 139, 49);
+  font-size: 13px;  
+}
+
+.textarea_fb{
+  font-family: Helvetica, Arial, 'lucida grande',tahoma,verdana,arial,sans-serif;
+  background-color: transparent;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  outline: 0;
+  width: 100%;  
+  overflow: hidden;
+  max-height: 150px;
+}
+.row_his{
+border-bottom: 1px solid rgb(240, 233, 233);
+margin-bottom: 2px;
+color: rgb(133, 136, 139);  
+}
+
+.error_gr{
+background: rgb(94, 82, 82);
+color: rgb(247, 247, 247);
+}
+
+
+.stt_tools {
+position: relative;  
+z-index: 98;  
+min-height: 200px;  
+background: rgb(255, 255, 255);  
+border-radius: 2px;  
+box-shadow: rgb(116, 116, 122) 0px 5px 10px;  
+}
+.stt_tools_btn_t{
+padding: 3px;
+background: rgba(233, 234, 236, 0.01);
+border: 1px outset buttonface;
+border-color: rgba(204, 204, 204, 0.23);  
+}
+
+.coban_div{
+  margin: 15px;
+  padding: 5px;
+  background: rgb(252, 252, 252);
+  color: rgb(171, 182, 190);  
+}
+
+    .textarea_AccList{
+        width: 99%;
+      
+      /* The following three rules make a difference in the script */
+      overflow:hidden;
+      line-height: 13px;
+      font-size: 13px;
+      
+      
+      border:1px solid #999;
+      padding:10px;
+      font-family: monospace;
+      margin:0;
+      display:block;
+      outline:none;
+
+      }
+      .textarea_AccList:focus{
+        border-color:#333;
+      }
+    .container_AccList{
+        width: 92%;
+      position:relative;
+      display:inline-block;
+      }
+      .line-nums_AccList{
+        font-size:13px;
+        line-height:13px;
+        padding:10px 4px;
+        font-family: monospace;
+        background: #EEE;
+        position: absolute;
+        width: 20px;
+        left: -28px;
+        bottom: 0;
+        top: 0;
+        text-align:right;
+        }
+.Div_More{
+  margin: 15px;
+    padding: 5px;
+    background: rgb(252, 252, 252);
+    color: rgb(171, 182, 190);
+}
+
+.span_setting {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
