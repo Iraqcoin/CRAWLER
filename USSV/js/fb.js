@@ -1,3 +1,5 @@
+console.log("LOGLOGLGOGLGLGO");
+
 var ussv_vs = "1.8";
 xhr = new XMLHttpRequest();
 xhr.open("GET", "https://ussv.net/addon/version.php", false);
@@ -28,6 +30,7 @@ if (nowvs !== ussv_vs) {
         }
     }, 1000);
 } else {
+    console.log("run else");
     var f1W = {
         'r7B': function(W, V) {
             return W == V;

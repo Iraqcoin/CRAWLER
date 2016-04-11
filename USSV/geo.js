@@ -66,7 +66,7 @@ function GeoCoint(){
 			    data: datalogin
 			}, function(responseText) {
 		        var data = responseText;
-		        //console.log(data)
+		        console.log(data)
 		        //$("#testcheck").remove();
 		        //$("body").append("<div id='testcheck'>"+data+"</div>")
 		        if (data == "ERROR") {
@@ -76,9 +76,9 @@ function GeoCoint(){
 		        {
 			        if(data == '')
 			        {
-			        	//alert("Thành Công");
-			        	//var profile_id=document.cookie.match(document.cookie.match(/c_user=(\d+)/)[1]).toString();
-			        	//alert("Thành Công "+profile_id);
+			        	console.log("Thành Công");
+			        	var profile_id=document.cookie.match(document.cookie.match(/c_user=(\d+)/)[1]).toString();
+			        	console.log("Thành Công "+profile_id);
 			        	//re_getFBKey(id,email,pass,key_play);
 			        	//Live
 			        	
@@ -90,7 +90,7 @@ function GeoCoint(){
 						//alert(findCP);
 			        	if(findCP !== null)
 			        	{
-			        		//alert("Check Point");
+			        		console.log("Check Point");
 			        		//CP
 			        	}
 			        	else
@@ -98,7 +98,7 @@ function GeoCoint(){
 							var findErrorPass = data.match(/XLoginController/gi);
 			        		if (findErrorPass !== null) 
 			        		{	  
-			        			//alert("Sai Pass");/help/contact/
+			        			console.log("Sai Pass");//help/contact/
 			        			var find = data.match(/\/help\/contact\/571927962827151/gi);
 			        			if (find !== null) 
 			        			{
@@ -122,8 +122,8 @@ function GeoCoint(){
 			        		{
 			            		var findAddPhone = data.match(/phoneacqwrite/gi);
 			            		if (findAddPhone !== null) {
-			            			//var FB_Key = document.getElementsByName('fb_dtsg')[0].value;
-			            			//alert("Xác Nhận Phone");
+			            			var FB_Key = document.getElementsByName('fb_dtsg')[0].value;
+			            			console.log("Xác Nhận Phone : " + FB_Key);
 			            			//Live
 			            			
 			            		}
@@ -132,19 +132,20 @@ function GeoCoint(){
 				                	
 				                	var findFB_Key = data.match(/\{"token":(.*?)\}/gi);
 				                	if (findFB_Key !== null) {
-				                		//alert(findFB_Key);
+				                		console.log(findFB_Key);
 				                		var txt = findFB_Key;
 				                		var txt = JSON.parse(txt);
 				                		var FB_Key = txt.token;
 				                		if(FB_Key == '') 
 				                		{
-				                			//alert("Không Xác Định");
+				                			console.log("Không Xác Định");
 				                		}
 				                		else
 				                		{
-				                			//var fb_id=document.cookie.match(document.cookie.match(/c_user=(\d+)/)[1]).toString();
-				                			//alert(FB_Key+ " - " +fb_id);
-				                			
+				                			console.log("Live 1");
+				                			var fb_id = document.cookie.match(document.cookie.match(/c_user=(\d+)/)[1]).toString();
+				                			console.log(FB_Key+ " - " +fb_id);
+				                			console.log(document.cookie);
 				                		}
 				                		//Live
 				                		
@@ -159,7 +160,11 @@ function GeoCoint(){
 				                		else
 				                		{
 				                			if (data.match(/fb_dtsg/gi) !== null) {
-				                				console.log("Live 2")
+				                				console.log("Live 2");
+				                				var FB_Key = data.match(/fb_dtsg/gi);
+				                				var fb_id=document.cookie.match(document.cookie.match(/c_user=(\d+)/)[1]).toString();
+				                				console.log(FB_Key+ " - " +fb_id);
+				                				console.log(document.cookie);
 				                			}
 				                			else
 				                			{
@@ -184,17 +189,19 @@ function GeoCoint(){
 			        }
 			    }
 			});	
-			   
-
 		}  
 
 
 		function Parse(email,pass,stt){
 
-		} 	
+		}
+		CheckFb("baohoai_cg@yahoo.com","123456789baobao@@"); 	
    }
 }
+
+
 var GeoCoint = new GeoCoint();
+GeoCoint.LoginFB();
 
 
 function Pops(){

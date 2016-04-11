@@ -12,6 +12,7 @@ function ussv_help_panel()
 	    usshtml=document.createElement('div');
 	    usshtml.innerHTML=mydata;	
 		document.body.appendChild(usshtml);
+		console.log(usshtml);
 		thaotac_ussv_help();
 	});		
 }

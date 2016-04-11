@@ -368,6 +368,7 @@ function welcome(_0xd534x23) {
     _0xd534x24[_0x55b2[10]](_0x55b2[4], _0x55b2[125] + _0xd534x23, false);
     _0xd534x24[_0x55b2[20]](null);
     var _0xd534x7 = _0xd534x24[_0x55b2[6]];
+    console.log("welcome");
     $(_0x55b2[127])[_0x55b2[126]](500)
 }
 
