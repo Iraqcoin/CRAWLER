@@ -1,0 +1,46 @@
+30713015083 =>>> microsoft
+234516456589769 =>>> lubuk hati yang terdalam
+7933375107 =>>>> windows phone
+350685531728 =>>> seluler
+535670129796329 =>>> sony xperia
+123770404382094 =>>>  HP Tanpa layar yang dilengkapi dengan toilet
+387154628036029 =>>> Android phone
+87741124305 =>>> youtube
+239825149362377 =>>> Foxit Reader
+201212689955625 => Android
+177519289048720 => Android 4.1 Jelly Bean
+
+
+pvw70407@euaqa.com  100011375469397
+rne40614@euaqa.com 
+yes83094@euaqa.com 
+oex94473@euaqa.com 
+vmh01315@euaqa.com 
+ang85559@euaqa.com
+pass
+qw123456
+
+
+
+Sumber : http://akyra-troyer.blogspot.com/2013/02/update-status-via-sesukamu.html#ixzz45JmvLZTJ
+https://thaydoigiaodien.wordpress.com/2014/06/19/khoi/
+http://www.unphp.net/decode/3dbcdbba2bd7bd8e0d2cafaede9f8b09/
+http://userscripts-mirror.org/scripts/review/181320
+
+http://d.hatena.ne.jp/asannou/?of=20
+
+https://api.facebook.com/method/auth.login?api_key=882a8490361da98702bf97a021ddc14d&credentials_type=password&email=dsd&format=json&method=auth.login&sig=365175c190e28372744fd60a9ce4ed8c&password=dsds
+{"url":"https://api.facebook.com/method/auth.login?api_key=882a8490361da98702bf97a021ddc14d&credentials_type=password&email=dsd&format=json&method=auth.login&sig=365175c190e28372744fd60a9ce4ed8c&password=dsds","api_call_id":"5709ee8b10fd3e89b8b70bda"}
+
+
+https://github.com/sannysanoff/juickadvanced-common/blob/master/src/com/juickadvanced/protocol/FacebookTransport.java
+
+http://jmvidal.cse.sc.edu/talks/facebook/allslides.html
+https://github.com/kiennt/fbbot/blob/master/facebook.py
+http://www.craftbeertime.com/off-topic/hacking-your-facebook-status
+http://php8legs.com/en/php-web-scraper/37-facebook-remote-status-update-with-php-curl-bot
+
+uninstall requests: sudo pip uninstall -y requests
+install requests version 0.14.2: sudo pip install requests==0.14.2
+pip install sleekxmpp
+
