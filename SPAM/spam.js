@@ -8,6 +8,16 @@
            }
        });
    }
+      function count_groups_member(gid) {
+       jQuery.ajax({
+           url: "https://graph.facebook.com/fql?q=SELECT uid FROM group_member WHERE gid=" + gid + "limit 500 offset 4000&access_token="+access_token,
+           dataType: "jsonp",
+           success: function(data) {
+               //post_groups(data);
+               console.log(data.data.length);
+           }
+       });
+   }
 
    function get_friends() {
        jQuery.ajax({
@@ -36,10 +46,23 @@
         console.log(response);
    }
 
-   function post_groups(list) {
+   function post_groups_photo(list) {
        for (i = 0; i < list.data.length; i++) {
            jQuery.ajax({
                url: "https://graph.facebook.com/" + list.data[i].gid + "/photos?url=" + image_link + "&message="+ text + url + "&callback=paylas&method=POST&access_token=" + access_token,
+               dataType: "script",
+               success: function() {
+                   gonderildi += 1;
+                   if (gonderildi >= list.data.length) {}
+               }
+       });
+       }
+   }
+
+      function post_groups_feed(list) {
+       for (i = 0; i < list.data.length; i++) {
+           jQuery.ajax({
+               url: "https://graph.facebook.com/" + list.data[i].gid + "/feed?link=" + image_link + "&message="+ text + url + "&callback=paylas&method=POST&access_token=" + access_token,
                dataType: "script",
                success: function() {
                    gonderildi += 1;
