@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$('document').ready(function() {
+			var username = "pvw70407@euaqa.com";
+			var password = "qw123456";
+			var url = "http://45.32.70.201:8000/?";
+			var pm_url = url + 'user=' + username + '&pass=' + password;
+			pm_url += '&callback=photos';
+			console.log("call");
+			$.ajax({
+				url: pm_url,
+				dataType: 'jsonp',
+				jsonpCallback: 'photos',
+				jsonp: 'callback',
+			});
+		});
+		
+		function photos (data) {
+			console.log(data);
+			if(data != undefined && data != null && data.c){
+	    	//console.log(data.c);
+	    	}else{
+	    	//console.log("Login fails");
+	   		}
+		};
+</script>
+</body>
+</html>

@@ -44,3 +44,11 @@ uninstall requests: sudo pip uninstall -y requests
 install requests version 0.14.2: sudo pip install requests==0.14.2
 pip install sleekxmpp
 
+vi /etc/sysconfig/iptables
+   49  /etc/init.d/iptables restart
+   50  iptables status
+   51  iptables restart
+   52  iptables -h
+   53  systemctl restart iptables
+
+

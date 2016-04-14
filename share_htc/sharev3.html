@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+ <html>
+ <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta http-equiv="content-type" content="text/html" />
+    <meta name="author" content="iljimae" />
+    <meta charset="utf-8" />
+    <title>TOOL SHARE TOKEN HTC - IOS</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+
+        <link type="text/css" href="css/bootstrap.css" rel="stylesheet"/>
+        <link type="text/css" href="css/plug_modal.css" rel="stylesheet"/>
+        <link type="text/css" href="css/tool-styles.css" rel="stylesheet"/>
+
+        <script type="text/javascript" src="js/jquery/jquery_1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery/jquery.tipsy.js"></script>
+        <script type="text/javascript" src="js/jquery/bootstrap-modal.js"></script>
+        <script type="text/javascript" src="js/jquery/validate/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/jquery/validate/messages_vi.js"></script>     
+        <script type="text/javascript" src="js/jquery/jquery.blockUI.js"></script>
+
+
+        <script type="text/javascript" src="js/init.js"></script>
+        <script type="text/javascript" src="js/ajax.js"></script>
+    </head>
+    <body>
+	<br/>
+    <div class="container-fluid height_100">
+		<div class="row height_100">
+			
+			<div class="col-md-12">
+				<section class="panel">
+					<div class="panel-body pd-15">
+						<form role="form" method="post" action="" id="send-form">
+
+							<center><div class="form-inline">
+								<label>Nhập post ID share  <span style="color:red;">*</span></label>
+								<input type="text" name="txt_post_id" id="txt_post_id" value="919292211517932" cols="50" original-title="Nhập post ID share" class="form-control required south" />
+								<label>Số lượng group muốn lấy  <span style="color:red;">*</span></label>
+								<input type="text" name="txt_group_max" id="txt_group_max" value="30" cols="50" original-title="Nhập số lượng group muốn lấy" class="form-control required south" />
+								<!-- <label>Time Delay ( Min >= 5s ):  <span style="color:red;">*</span></label>
+								<input type="text" name="txt_share_delay" id="txt_share_delay" value="15" cols="50" original-title="Time Delay ( Min >= 5s ):" class="form-control required south" /> -->
+								<!-- <label>Số Luồng ( Max 10 ): </label>
+								<input type="text" name="txt_share_number" id="txt_share_number" value="15" cols="50" original-title="Số Luồng ( Max 10 ):" class="form-control" /> -->
+							</div></center>
+							
+							<div class="form-group">
+								<label>Danh sách Token <span style="color:red;">*</span></label>
+								<textarea class="form-control required south" name="txt_token" cols="150" rows="10" original-title="Nhập list token" id="txt_token"></textarea>
+								<p class="text-center">Để 1 token 1 dòng - Check Post để kiếm tra post đã bị xóa chưa - Clear Logs để xóa log nếu quá dài* Token đã nhập: <b id="count_token">0</b></p>
+							</div>
+							
+							<center><div class="form-group">
+								<button type="reset" class="btn btn-default"><i class="fa fa-recycle"></i> Nhập Lại</button>
+								<a id="share" class="btn btn-success btn-alt">Chia sẻ Link hoặc Status</a>
+							</div></center>
+						</form>
+
+					</div>
+
+				</section>
+			<!-- ok -->
+			</div>
+			<div class="col-md-12">
+				<section class="panel-body pd-15">
+					<header class="panel">
+						<center><h2 class="panel-title"> Thành Công <b class="btn btn-success" id="count_live">0</b> Thất Bại <b class="btn btn-danger" id="count_die">0</b></h2></center>
+						<div class="panel-actions">
+						   <a class="btn btn-sm btnnn btn-warning" onclick="$('#result').empty();"><i class="fa fa-trash-o"></i> Xóa log</a>
+						</div>
+				    </header>
+
+					<div id="result" class="panel-body pd-15">
+						<div style="border:1px solid #CCC; overflow:scroll; height:250px; width:auto; padding: 30px;" class="panel-body">
+							<div class="loader"></div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+	
+	$(document).ready(function () {
+		//count token
+		$("#txt_token").change(function() {
+			$("#count_token").text($.trim($("#txt_token").val()).split("\n").length)
+		});
+        $("#share").click(function () {
+            $("#result").empty();
+            input = $.trim($("#txt_token").val()).split("\n");
+            var postid = $('#txt_post_id').val();
+			var limitgr = $('#txt_group_max').val();
+			var delay = $('#txt_share_delay').val();
+			var live = 0; var die = 0;
+            $('#result').prepend('<span class="list-group-item list-group-item-success"><i class="fa fa-check-circle"></i> <b>Đang Xử Lý Token</b></span>');
+            for (var a = 0; a < input.length; a++) {
+                Get_Group(postid, limitgr, input[a]);
+            }
+        });
+    });
+
+    function Get_Group(postid, limitgr, a) {
+		live = parseInt($("#count_live").html());
+		die = parseInt($("#count_die").html());
+        $.getJSON('https://graph.fb.me/me/groups?limit=' + limitgr + '&access_token=' + a).done(function (html) {
+            if (html.data) { 
+                for (var i = 0; i < html.data.length; i++) {
+                    $.get('https://graph.facebook.com/' + postid + '/sharedposts?to=' + html.data[i].id + '&access_token=' + a + '&method=post').done(function (group) {
+                        $('#result').prepend('<span class="list-group-item list-group-item-success"><i class="fa fa-check-circle"></i> <b style="color:green">Thành công</b>: '+ group.id +'</span>');
+						live++;
+						console.log(live);
+						$("#count_live").html(live);
+				
+                    }).error(function (err) {
+                        $('#result').prepend('<span class="list-group-item list-group-item-danger"><i class="glyphicon glyphicon-remove-circle"></i><b style="color:red"> Thất bại</b>: ' +err.responseJSON.error.message+ '</span>');
+						die++;
+						console.log(die);
+						$("#count_die").html(die);
+					});
+                } 
+            }
+        });
+    }
+    
+    function delay(ms) {
+       var cur_d = new Date();
+       var cur_ticks = cur_d.getTime();
+       var ms_passed = 0;
+       while(ms_passed < ms) {
+           var d = new Date();
+           var ticks = d.getTime();
+           ms_passed = ticks - cur_ticks;
+       }
+   }
+          
+   </script>
+<style type="text/css">
+    #list_fb_objects{
+
+    }
+    #list_fb_objects span{
+        color: green;
+        float: right;
+    }
+    #list_fb_objects input{
+        float: left;
+        margin-right: 10px;
+    }
+
+    #log{
+        
+        margin-top: 30px;
+    }
+
+    #log .panel-body{
+        padding: 30px;
+    }
+
+    
+    #log .panel-body span{
+        display: block;
+    }
+</style>
+
+</body>
+</html>
