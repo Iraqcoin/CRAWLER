@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Tool Spam Token Max</title>
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+ <link href="css/style.css" rel="stylesheet">
+ <style type="text/css">
+  .margin-top-05 { margin-top: 0.5em; }
+</style>
+</head>
+<body>
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">TOOL HB</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Search...">
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+        <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Lọc Token</a></li>
+        <li><a href="#">Check Token</a></li>
+        <li><a href="#">Scan group id</a></li>
+        <li><a href="#">Add mem</a></li>
+       
+      </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">Dashboard</h1>
+
+      <div class="row placeholders">
+        <div class="col-xs-6 col-sm-3 placeholder">
+          <img src="groups-icon.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+          <h4>Total Token</h4>
+          <span class="text-muted" id="total_token">0</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+          <img src="icon-friends.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+          <h4>Total Live</h4>
+          <span class="text-muted" id="total_token_live">0</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+          <img src="icon-friends.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+          <h4>Total Die</h4>
+          <span class="text-muted" id="total_token_die">0</span>
+        </div>
+      </div>
+
+     <div class="row">
+       <div class="col-xs-12">
+          <h2 class="sub-header">List Token</h2>
+          <textarea class="form-control" rows="7" id="list_token"></textarea>
+       </div>
+     </div>
+      <div class="row">
+       <div class="col-xs-12">
+          <h2 class="sub-header">Token Live</h2>
+          <textarea class="form-control" rows="7" id="token_live"></textarea>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-xs-12">
+          <h2 class="sub-header">Token Die</h2>
+          <textarea class="form-control" rows="7" id="token_die"></textarea>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-xs-12">
+          <h2 class="sub-header">Location</h2>
+          <textarea class="form-control" rows="5" id="locations"></textarea>
+       </div>
+     </div>
+    <button type="button" class="btn btn-primary margin-top-05" id="start_check">Start Check</button>
+    <button type="button" class="btn btn-primary margin-top-05" id="start_location">Check Location</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="spam.js"></script>
+<script type="text/javascript">
+		//EAAAAUaZA8jlABAENRBLFaMFhIJlXYqxNGSJy6b4Rs6ZChNxKVLcSZADLA0nK3EJMNcbsUhYlHBa0fS92k1kELzapTTMN9mZCXL48Og2Il8q3W5QJY6gdxQBQiw7J2HHSK9ZBa9VHY3lucj9skdnV7uqWLYoK7wU17ZB9QRZAbcOsuj7lKuB1rNXF
+		var access_token = "CAAAAUaZA8jlABAMGBtoJ4P4PTMUC2QqK6OZCeZAtkChq41tFUD076vqaZBPXCxYZBXtwslgI2W5wIBbEhcOEufZAuZAmZBxXTxVmcritxbl3ZASPw6Epp90yYrE3LSeLGtX9lDeZAmOThZB4pZA9Or5jY89ZCk3y43XPcri1l3N3hEUzLBhRhFqdOvb6ZA";
+		var url = "http://news.zing.vn/viet-nam-tren-nhung-thuoc-phim-dau-tien-cua-king-kong-post641001.html";
+		var text = "Việt Nam trên những thước phim đầu tiên của ‘King Kong’";
+		var image_link = "http://img.v3.news.zdn.vn/w660/Uploaded/xbhunku/2016_04_11/skullislandheader1.jpg";
+
+    var total_token = 0;
+    var token_live = 0;
+    var token_die = 0;
+    $(document).ready(function(){
+
+      $("#start_check").click(function(event) {
+        total_token = 0;
+        token_live = 0;
+        token_die = 0;
+        var list_token = $('#list_token').val();
+        var list_token_arr = list_token.trim().split('\n');
+        total_token = list_token_arr.length;
+        $('span#total_token').text(total_token);
+        document.getElementById("token_die").value = "";
+        document.getElementById("token_live").value = "";
+        var check = function(access_token){
+            checkToken(access_token);
+        }
+        $.each(list_token_arr, function(k){
+          console.log("setTimeout");
+          setTimeout(check.bind(null, list_token_arr[k]) , 1000);
+        });
+      });
+
+      $("#start_location").click(function(event) {
+        var list_token = $('#list_token').val();
+        var list_token_arr = list_token.trim().split('\n');
+        total_token = list_token_arr.length;
+        document.getElementById("locations").value = "";
+        var check_location = function(access_token){
+            checkLocation(access_token);
+        }
+        $.each(list_token_arr, function(k){
+          console.log("setTimeout");
+          setTimeout(check_location.bind(null, list_token_arr[k]) , 1000);
+        });
+      });
+
+    });
+
+    function checkToken(access_token){
+       $.getJSON("https://graph.facebook.com/me?access_token=" + access_token, function (response) {
+        console.log(response);
+           if (response.id) {
+               var userid = response.id;
+               if(userid){
+                  token_live = token_live + 1;
+                  $('span#total_token_live').text(token_live);
+                  document.getElementById("token_live").value += access_token + "\n";
+               }
+               else{
+                token_die = token_die + 1;
+                $('span#total_token_die').text(token_die);
+                document.getElementById("token_die").value += access_token + "\n";
+               }
+           }
+           else{
+              token_die = token_die + 1;
+              $('span#total_token_die').text(token_die);
+              document.getElementById("token_die").value += access_token + "\n";
+           }
+       }).error(function() {
+            token_die = token_die + 1;
+            $('span#total_token_die').text(token_die);
+            document.getElementById("token_die").value += access_token + "\n"; 
+          });
+    }
+    function checkLocation(access_token){
+       $.getJSON("https://graph.facebook.com/me?fields=location&access_token=" + access_token, function (response) {
+        if(response.location){
+           document.getElementById("locations").value += response.location.name + "\n";
+         }
+         else{
+            document.getElementById("locations").value += "(not set)" + "\n";
+         }
+      }).error(function() {
+            document.getElementById("locations").value += "token die" + "\n"; 
+          });
+    }
+	</script>
+</body>
+</html>

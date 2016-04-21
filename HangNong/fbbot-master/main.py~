@@ -1,0 +1,17 @@
+import unittest
+import nose
+import sys
+
+from facebook import FacebookClient
+
+class MainClass(object):
+
+    def run(self):
+	self.client = FacebookClient()
+        res = self.client.login("nmc49028@euaqa.com", "qw123456")
+	print res["access_token"]
+if __name__ == '__main__':
+	if len(argv) == 1:
+        	print "Not enough arguments"
+        	return
+    	MainClass().run()

@@ -131,7 +131,6 @@ class FacebookClient(BaseRequest):
         if 'access_token' in res.json:
             self.access_token = res.json['access_token']
             self.uid = res.json['uid']
-	print self.access_token
         return res.json
 
     def send_message(self, friend_id, message):
