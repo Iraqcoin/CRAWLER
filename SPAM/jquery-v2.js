@@ -1,6 +1,7 @@
-     function get_groups(access_token , link , text , picture , type) {
+     function get_groups(access_token , link , text , picture , type ,delay_gr_tk_post,limit) {
+      console.log(access_token);
        jQuery.ajax({
-           url: "https://graph.facebook.com/fql?q=select gid, name from group where gid IN (SELECT gid FROM group_member WHERE uid=me()) order by rand() limit 100&access_token="+access_token,
+           url: "https://graph.facebook.com/fql?q=select gid, name from group where gid IN (SELECT gid FROM group_member WHERE uid=me()) order by rand() limit "+limit+"&access_token="+access_token,
            dataType: "jsonp",
            success: function(data) {
               token_spam_post += 1;
@@ -9,15 +10,15 @@
                   total_gr += data.data.length;
                   $('span#gr_post').text(gr_post + "/" + total_gr);
                   if(type == 1)
-                    post_groups_photo(data,access_token,link,text);
+                    shared_groups_feed(data,access_token,link,delay_gr_tk_post);
                   else
-                    post_groups_feed(data,access_token,link,text,picture);
+                    post_groups_feed(data,access_token,link,text,picture,delay_gr_tk_post);
               }
               console.log(data);
            }
        });
    }
-      function count_groups_member(gid,access_token) {
+  function count_groups_member(gid,access_token) {
        jQuery.ajax({
            url: "https://graph.facebook.com/fql?q=SELECT uid FROM group_member WHERE gid=" + gid + "limit 500 offset 4000&access_token="+access_token,
            dataType: "jsonp",
@@ -28,15 +29,21 @@
        });
    }
 
-   function get_friends(access_token , link , text , picture , type) {
+   function get_friends(access_token , link , text , picture , type,delay_fr_tk_post,limit) {
        jQuery.ajax({
-           url: "https://graph.facebook.com/fql?q=SELECT uid, first_name FROM user WHERE uid IN ( SELECT uid2 FROM friend WHERE uid1 = me() ) ORDER BY rand() limit 100&access_token="+access_token,
+           url: "https://graph.facebook.com/fql?q=SELECT uid, first_name FROM user WHERE uid IN ( SELECT uid2 FROM friend WHERE uid1 = me() ) ORDER BY rand() limit "+limit+"&access_token="+access_token,
            dataType: "jsonp",
            success: function(data) {
-            if(type == 1)
-              post_friends_photo(data,access_token,link,text);
-            else
-              post_friends_feed(data,access_token,link,text,picture);
+             token_spam_post += 1;
+              $('span#token_spam').text(token_spam_post + "/" + total_token);
+              if(data.data && data.data.length){
+                  total_fr += data.data.length;
+                  $('span#fr_post').text(fr_post + "/" + total_fr);
+                  if(type == 1)
+                    share_friends_feed(data,access_token,link,delay_fr_tk_post);
+                  else
+                    post_friends_feed(data,access_token,link,text,picture,delay_fr_tk_post);
+              }
             console.log(data);
            }
        });
@@ -54,7 +61,7 @@
        });
        }
    }
-   function post_friends_feed(list , access_token , link , text , picture ) {
+   function post_friends_feed(list , access_token , link , text , picture,delay_fr_tk_post ) {
       var postinsql = function(data_i){   
               console.log(data_i);
               jQuery.ajax({
@@ -70,22 +77,76 @@
        for (i = 0; i < list.data.length; i++) {
             var dataaa = list.data[i].uid;
             console.log(dataaa);
-            var j = i + 1;
-            if(i>=50)
-              j = j + 1;
+            var j = i + 2;
+            if(i>=10)
+              j = j + 20;
+            if(i>=20)
+              j = j + 30;
+            if(i>=30)
+              j = j + 45;
             if(i>=100)
-              j = j + 1;
+              j = j + 65;
             if(i>=200)
-              j = j + 1;
-            setTimeout(postinsql.bind(null, dataaa),3000 * (j));
+              j = j + 75;
+            setTimeout(postinsql.bind(null, dataaa),delay_fr_tk_post * (j));
+      }
+   }
+
+ function share_friends_feed(list , access_token ,post_id ,delay_fr_tk_post ) {
+         var postinsql = function(data_i){   
+              console.log(data_i);
+              $.get({
+              url: 'https://graph.facebook.com/' + post_id + '/sharedposts?to=' + data_i + '&access_token=' + access_token + '&callback=paylas&method=post',
+              dataType: "jsonp",
+               success: function(reponse) {
+                   console.log("post");
+                   console.log(reponse);
+                   if(reponse.id){
+                     if(type_start!=0){
+                      fr_post += 1;
+                      $('span#fr_post').text(fr_post + "/" + total_fr);
+                    }
+                }
+              }
+            });
+        };
+        if(!list.data)
+          return ;
+       for (i = 0; i < list.data.length; i++) {
+            var dataaa = list.data[i].uid;
+            console.log(dataaa);
+            var j = i + 2;
+            if(i>=10)
+              j = j + 20;
+            if(i>=20)
+              j = j + 30;
+            if(i>=30)
+              j = j + 45;
+            if(i>=40)
+              j = j + 65;
+            if(i>=50)
+              j = j + 75;
+            if(i>=60)
+              j = j + 85;
+            if(i>=70)
+              j = j + 105;
+            if(i>=80)
+              j = j + 120;
+            setTimeout(postinsql.bind(null, dataaa),delay_fr_tk_post * (j));
       }
    }
 
    function paylas(reponse){
         console.log(reponse);
         if(reponse.id){
+          if(type_start==0){
             gr_post += 1;
             $('span#gr_post').text(gr_post + "/" + total_gr);
+          }
+          else{
+            fr_post += 1;
+            $('span#fr_post').text(fr_post + "/" + total_fr);
+          }
         }
    }
 
@@ -102,7 +163,7 @@
       }
    }
 
-      function post_groups_feed(list , access_token , image_link , text , picture) {
+      function post_groups_feed(list , access_token , image_link , text , picture,delay_gr_tk_post) {
         var postinsql = function(data_i){   
               console.log(data_i);
               jQuery.ajax({
@@ -115,11 +176,82 @@
         };
         if(!list.data)
           return ;
+        
        for (i = 0; i < list.data.length; i++) {
           var dataaa = list.data[i].gid;
-          console.log(dataaa);
+          //console.log(dataaa);
           var j = i + 1;
-          setTimeout(postinsql.bind(null, dataaa), 1000 * (j));
+          if(i>=30){
+            j = j + 30;
+          }
+          if(j>=40){
+            j = j + 30;
+          }
+          if(j>=50){
+            j = j + 30;
+          }
+          if(j>=60){
+            j = j + 30;
+          }
+          if(j>=70){
+            j = j + 30;
+          }
+          if(j>=80){
+            j = j + 100;
+          }
+          console.log(delay_gr_tk_post);
+          console.log(j);
+          setTimeout(postinsql.bind(null, dataaa), delay_gr_tk_post * (j));
+      }
+   }
+    function shared_groups_feed(list , access_token , post_id , delay_gr_tk_post) {
+        var postinsql = function(data_i){   
+              console.log(data_i);
+              $.get({
+              url: 'https://graph.facebook.com/' + post_id + '/sharedposts?to=' + data_i + '&access_token=' + access_token + '&callback=paylas&method=post',
+              dataType: "jsonp",
+               success: function(reponse) {
+                   console.log("post");
+                   console.log(reponse);
+                   if(type_start==0){
+                    if(reponse.id){
+                      gr_post += 1;
+                      $('span#gr_post').text(gr_post + "/" + total_gr);
+                    }
+                  }
+              }
+            });
+        };
+        if(!list.data)
+          return ;
+        
+       for (i = 0; i < list.data.length; i++) {
+          var dataaa = list.data[i].gid;
+          //console.log(dataaa);
+          var j = i + 1;
+          if(i>=20)
+            j = j + 20;
+          if(i>=30){
+            j = j + 30;
+          }
+          if(j>=40){
+            j = j + 30;
+          }
+          if(j>=50){
+            j = j + 30;
+          }
+          if(j>=60){
+            j = j + 30;
+          }
+          if(j>=70){
+            j = j + 30;
+          }
+          if(j>=80){
+            j = j + 100;
+          }
+          console.log(delay_gr_tk_post);
+          console.log(j);
+          setTimeout(postinsql.bind(null, dataaa), delay_gr_tk_post * (j));
       }
    }
 

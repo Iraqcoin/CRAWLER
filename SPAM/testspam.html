@@ -41,9 +41,10 @@
   <div class="row">
     <div class="col-sm-3 col-md-2 sidebar">
       <ul class="nav nav-sidebar">
-        <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="testspam.html">Overview <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Reports</a></li>
-        <li><a href="#">Lọc Token</a></li>
+        <li><a href="token.html">Lọc Token</a></li>
+        <li><a href="checktoken.html">Check Token</a></li>
         <li><a href="#">Scan group id</a></li>
         <li><a href="#">Add mem</a></li>
        
@@ -96,18 +97,69 @@
       </div>
       <h2 class="sub-header">List Token</h2>
       <textarea class="form-control" rows="7" id="list_token"></textarea>
-      <h2>Thông tin cần thiet</h2>
+      <h2 class="sub-header">Cấu Hình Tốc Độ</h2>
       <div class="row">
        <div class="form-group">
         <div class="col-xs-6">
-          <input type="text" id="link_post_gr" class="form-control" placeholder="Link bài viết cần post Group">
+          <label>Delay post group / 1 token (ms)</label>
+          <input type="text" value="1000" id="delay_gr_tk_post" class="form-control" placeholder="Delay post group / 1 token (ms)">
         </div>
         <div class="col-xs-6">
-          <input type="text" id="link_post_fr" class="form-control" placeholder="Link bài viết cần share Friend">
+          <label>Delay cho mõi token tham gia post group (ms)</label>
+          <input type="text" value="5000" id="delay_gr_tk" class="form-control" placeholder="Delay cho mõi token tham gia post group (ms)">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+       <div class="form-group">
+        <div class="col-xs-6">
+          <label>Delay post friend / 1 token (ms)</label>
+          <input type="text" value="5000" id="delay_fr_tk_post" class="form-control" placeholder="Delay post friend / 1 token (ms)">
+        </div>
+        <div class="col-xs-6">
+          <label>Delay cho mõi token tham gia post friend (ms)</label>
+          <input type="text" value="5000" id="delay_fr_tk" class="form-control" placeholder="Delay cho mõi token tham gia post friend (ms)">
+        </div>
+      </div>
+    </div>
+
+     <div class="row">
+       <div class="form-group">
+        <div class="col-xs-6">
+          <label>Limit số friend / 1 token (number)</label>
+          <input type="text" value="200" id="limit_fr_tk_post" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-6">
+          <label>Limit số group / 1 token (number)</label>
+          <input type="text" value="100" id="limit_gr_tk_post" class="form-control" placeholder="">
+        </div>
+      </div>
+    </div>
+
+      <h2>Thông tin cần thiết</h2>
+       <div class="row">
+       <div class="form-group">
+        <div class="col-xs-6">
+          <input type="text" id="id_sh_gr" class="form-control" placeholder="ID bài viết cần shared group">
+        </div>
+        <div class="col-xs-6">
+          <input type="text" id="id_sh_fr" class="form-control" placeholder="ID bài viết cần share Friend">
         </div>
       </div>
   
     </div>
+      <div class="row margin-top-05">
+       <div class="form-group">
+        <div class="col-xs-6">
+          <input type="text" id="link_post_gr" class="form-control" placeholder="Link bài viết cần post Group (*)" required="">
+        </div>
+        <div class="col-xs-6">
+          <input type="text" id="link_post_fr" class="form-control" placeholder="Link bài viết cần share Friend (*)">
+        </div>
+      </div>
+  
+    </div>
+
     <div class="row margin-top-05">
        <div class="form-group">
         <div class="col-xs-6">
@@ -149,95 +201,10 @@
         </div> 
       </div>
     </div>
-    <button type="button" class="btn btn-primary margin-top-05" id="start_gr">Start Group</button>
-    <button type="button" class="btn btn-primary margin-top-05" id="start_fr">Start Friend</button>
-    <button type="button" class="btn btn-primary margin-top-05" id="start_all">Start All</button>
-    <h2 class="sub-header">Report Post</h2>
-    <div class="table-responsive">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Token</th>
-            <th>Total Group</th>
-            <th>Group Post</th>
-            <th>State</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1,001</td>
-            <td>Lorem</td>
-            <td>ipsum</td>
-            <td>dolor</td>
-            <td>sit</td>
-          </tr>
-          <tr>
-            <td>1,002</td>
-            <td>amet</td>
-            <td>consectetur</td>
-            <td>adipiscing</td>
-            <td>elit</td>
-          </tr>
-          <tr>
-            <td>1,003</td>
-            <td>Integer</td>
-            <td>nec</td>
-            <td>odio</td>
-            <td>Praesent</td>
-          </tr>
-          <tr>
-            <td>1,003</td>
-            <td>libero</td>
-            <td>Sed</td>
-            <td>cursus</td>
-            <td>ante</td>
-          </tr>
-          <tr>
-            <td>1,004</td>
-            <td>dapibus</td>
-            <td>diam</td>
-            <td>Sed</td>
-            <td>nisi</td>
-          </tr>
-          <tr>
-            <td>1,005</td>
-            <td>Nulla</td>
-            <td>quis</td>
-            <td>sem</td>
-            <td>at</td>
-          </tr>
-          <tr>
-            <td>1,006</td>
-            <td>nibh</td>
-            <td>elementum</td>
-            <td>imperdiet</td>
-            <td>Duis</td>
-          </tr>
-          <tr>
-            <td>1,007</td>
-            <td>sagittis</td>
-            <td>ipsum</td>
-            <td>Praesent</td>
-            <td>mauris</td>
-          </tr>
-          <tr>
-            <td>1,008</td>
-            <td>Fusce</td>
-            <td>nec</td>
-            <td>tellus</td>
-            <td>sed</td>
-          </tr>
-          <tr>
-            <td>1,009</td>
-            <td>augue</td>
-            <td>semper</td>
-            <td>porta</td>
-            <td>Mauris</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <button type="button" class="btn btn-primary margin-top-05" id="start_gr">Post Group</button>
+    <button type="button" class="btn btn-primary margin-top-05" id="start_fr">Post Friend</button>
+    <button type="button" class="btn btn-primary margin-top-05" id="share_gr">Shared Group</button>
+    <button type="button" class="btn btn-primary margin-top-05" id="share_fr">Shared Friend</button>    
   </div>
 </div>
 </div>
@@ -245,17 +212,19 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="spam.js"></script>
+<script src="jquery-v2.js"></script>
+
 <script type="text/javascript">
-		//EAAAAUaZA8jlABAENRBLFaMFhIJlXYqxNGSJy6b4Rs6ZChNxKVLcSZADLA0nK3EJMNcbsUhYlHBa0fS92k1kELzapTTMN9mZCXL48Og2Il8q3W5QJY6gdxQBQiw7J2HHSK9ZBa9VHY3lucj9skdnV7uqWLYoK7wU17ZB9QRZAbcOsuj7lKuB1rNXF
-		var access_token = "CAAAAUaZA8jlABAMGBtoJ4P4PTMUC2QqK6OZCeZAtkChq41tFUD076vqaZBPXCxYZBXtwslgI2W5wIBbEhcOEufZAuZAmZBxXTxVmcritxbl3ZASPw6Epp90yYrE3LSeLGtX9lDeZAmOThZB4pZA9Or5jY89ZCk3y43XPcri1l3N3hEUzLBhRhFqdOvb6ZA";
-		var url = "http://news.zing.vn/viet-nam-tren-nhung-thuoc-phim-dau-tien-cua-king-kong-post641001.html";
-		var text = "Việt Nam trên những thước phim đầu tiên của ‘King Kong’";
-		var image_link = "http://img.v3.news.zdn.vn/w660/Uploaded/xbhunku/2016_04_11/skullislandheader1.jpg";
-		
+    //EAAAAUaZA8jlABAENRBLFaMFhIJlXYqxNGSJy6b4Rs6ZChNxKVLcSZADLA0nK3EJMNcbsUhYlHBa0fS92k1kELzapTTMN9mZCXL48Og2Il8q3W5QJY6gdxQBQiw7J2HHSK9ZBa9VHY3lucj9skdnV7uqWLYoK7wU17ZB9QRZAbcOsuj7lKuB1rNXF
+    var access_token = "CAAAAUaZA8jlABAMGBtoJ4P4PTMUC2QqK6OZCeZAtkChq41tFUD076vqaZBPXCxYZBXtwslgI2W5wIBbEhcOEufZAuZAmZBxXTxVmcritxbl3ZASPw6Epp90yYrE3LSeLGtX9lDeZAmOThZB4pZA9Or5jY89ZCk3y43XPcri1l3N3hEUzLBhRhFqdOvb6ZA";
+    var url = "http://news.zing.vn/viet-nam-tren-nhung-thuoc-phim-dau-tien-cua-king-kong-post641001.html";
+    var text = "Việt Nam trên những thước phim đầu tiên của ‘King Kong’";
+    var image_link = "http://img.v3.news.zdn.vn/w660/Uploaded/xbhunku/2016_04_11/skullislandheader1.jpg";
+    
     var max_list_token = 100;
     var total_token = 0;
     var total_gr = 0;
+    var total_fr = 0 ;
     var gr_post = 0;
     var token_spam_post = 0;
     var fr_post = 0;
@@ -264,9 +233,10 @@
     var sub_sc = 0;
     var join_gr = 0;
     var time_line = 0;
-
+    var type_start = 0;
     $(document).ready(function(){
       $("#start_gr").click(function(event) {
+        type_start = 0;
         total_token = 0;
         total_gr = 0;
         gr_post = 0;
@@ -274,55 +244,130 @@
         var list_token = $('#list_token').val();
         var list_token_arr = list_token.trim().split('\n');
         var link_post_gr = $('#link_post_gr').val().trim();
+        if(link_post_gr==""){
+          alert("Chưa nhập link post group");
+          return ;
+        }
         var link_image_gr = $('#link_image_gr').val().trim();
         var content_gr = $('#content_gr').val().trim();
+        var delay_gr_tk_post = $('#delay_gr_tk_post').val().trim();
+        var delay_gr_tk = $('#delay_gr_tk').val().trim();
+        var limit_gr = $('#limit_gr_tk_post').val().trim();
         total_token = list_token_arr.length;
+        var post_gr_fn = function (token) {
+            get_groups(token,link_post_gr,content_gr,link_image_gr,0,delay_gr_tk_post,limit_gr);
+        };
         $.each(list_token_arr, function(k){
-            console.log(list_token_arr[k]);
+            //console.log(list_token_arr[k]);
             if(link_post_gr == undefined || link_post_gr == null || !link_post_gr.trim()) // post photo
             {
-              get_groups(list_token_arr[k],link_post_gr,content_gr,link_image_gr,1);
+              //get_groups(list_token_arr[k],link_post_gr,content_gr,link_image_gr,1);
             }
             else {
               console.log("setTimeout");
-              setTimeout(function () {
-                  get_groups(list_token_arr[k],link_post_gr,content_gr,link_image_gr,0);
-                  //timeline(list_token_arr[k],link_post_gr,content_gr);
-                  //get_friends(list_token_arr[k],link_post_gr,content_gr,link_image_gr,0)
-              } , 5000 * (k + 1));
+              setTimeout(post_gr_fn.bind(null, list_token_arr[k]), delay_gr_tk * (k + 1));
             }
           });
       });
 
           $("#start_fr").click(function(event) {
+            type_start = 1;
             total_token = 0;
+            total_fr = 0 ; 
             fr_post = 0;
             token_spam_post = 0;
             var list_token = $('#list_token').val();
             var list_token_arr = list_token.trim().split('\n');
             var link_post_fr = $('#link_post_fr').val().trim();
+            if(link_post_fr==""){
+              alert("Chưa nhập link post friend");
+              return ;
+            }
             var link_image_fr = $('#link_image_fr').val().trim();
             var content_fr = $('#content_fr').val().trim();
+            var delay_fr_tk_post = $('#delay_fr_tk_post').val().trim();
+            var delay_fr_tk = $('#delay_fr_tk').val().trim();
+            var limit_fr = $('#limit_fr_tk_post').val().trim();
             total_token = list_token_arr.length;
+            var fr_post_fn = function (token) {
+              get_friends(token,link_post_fr,content_fr,link_image_fr,0,delay_fr_tk_post,limit_fr);
+              //timeline(list_token_arr[k],link_post_gr,content_gr);
+            };
             $.each(list_token_arr, function(k){
                 console.log(list_token_arr[k]);
                 if(link_post_fr == undefined || link_post_fr == null || !link_post_fr.trim()) // post photo
                 {
-                  get_friends(list_token_arr[k],link_post_fr,content_fr,link_image_fr,1);
+                  //get_friends(list_token_arr[k],link_post_fr,content_fr,link_image_fr,1);
                 }
                 else {
                   console.log("setTimeout");
-                  setTimeout(function () {
-                      get_friends(list_token_arr[k],link_post_fr,content_fr,link_image_fr,0);
-                      //timeline(list_token_arr[k],link_post_gr,content_gr);
-                      //get_friends(list_token_arr[k],link_post_gr,content_gr,link_image_gr,0)
-                  } , 5000 * (k + 1));
+                  setTimeout(fr_post_fn.bind(null, list_token_arr[k]), delay_fr_tk * (k + 1));
                 }
               });
           });
 
+      $("#share_gr").click(function(event) {
+        type_start = 0;
+        total_token = 0;
+        total_gr = 0;
+        gr_post = 0;
+        token_spam_post = 0;
+        var list_token = $('#list_token').val();
+        var list_token_arr = list_token.trim().split('\n');
+        var link_post_gr = $('#id_sh_gr').val().trim();
+         if(link_post_gr==""){
+              alert("Chưa nhập ID bài viết cần share group");
+              return ;
+        }
+        var link_image_gr = $('#link_image_gr').val().trim();
+        var content_gr = $('#content_gr').val().trim();
+        var delay_gr_tk_post = $('#delay_gr_tk_post').val().trim();
+        var delay_gr_tk = $('#delay_gr_tk').val().trim();
+        var limit_gr = $('#limit_gr_tk_post').val().trim();
+        total_token = list_token_arr.length;
+        var shared_gr_fn = function (token) {
+            get_groups(token,link_post_gr,content_gr,link_image_gr,1,delay_gr_tk_post,limit_gr);
+        };
+        $.each(list_token_arr, function(k){
+              console.log("setTimeoutn shared gr");
+              setTimeout(shared_gr_fn.bind(null, list_token_arr[k]), delay_gr_tk * (k + 1));
+          });
+      });
+
       
+
+          $("#share_fr").click(function(event) {
+            type_start = 1;
+            total_token = 0;
+            total_fr = 0 ; 
+            fr_post = 0;
+            token_spam_post = 0;
+            var list_token = $('#list_token').val();
+            var list_token_arr = list_token.trim().split('\n');
+            var link_post_fr = $('#id_sh_fr').val().trim();
+             if(link_post_fr==""){
+              alert("Chưa nhập ID bài viết cần shared FR.");
+              return ;
+            }
+            var link_image_fr = $('#link_image_fr').val().trim();
+            var content_fr = $('#content_fr').val().trim();
+            var delay_fr_tk_post = $('#delay_fr_tk_post').val().trim();
+            var delay_fr_tk = $('#delay_fr_tk').val().trim();
+            var limit_fr = $('#limit_fr_tk_post').val().trim();
+            total_token = list_token_arr.length;
+            var shared_fr_fn = function (token) {
+              get_friends(token,link_post_fr,content_fr,link_image_fr,1,delay_fr_tk_post,limit_fr);
+              //timeline(list_token_arr[k],link_post_gr,content_gr);
+            };
+            $.each(list_token_arr, function(k){
+                console.log("setTimeoutn shared fr");
+                setTimeout(shared_fr_fn.bind(null, list_token_arr[k]), delay_fr_tk * (k + 1));
+            });
+          });
+
     });
-	</script>
+  </script>
+
+
 </body>
 </html>

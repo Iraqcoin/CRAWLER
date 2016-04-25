@@ -1,0 +1,28 @@
+{
+  "name": "Get Token Facebook Tool",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description" : "Get Token Spam, Addmem - By Phương Đông Đẹp Trai",
+  "icons": { "16": "icons/16x16.png", "48": "icons/48x48.png", "128": "icons/128x128.png" },
+
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/19x19.png",
+      "38": "icons/38x38.png"
+    },
+    "default_title": "Get Token",
+    "default_popup": "browseraction/getToken.html"
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

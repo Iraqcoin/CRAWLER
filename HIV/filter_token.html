@@ -1,0 +1,83 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Add Mem Group Token</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+	<style>
+		input[type=text]{
+			width: 100%;
+			height: 5%;
+		}
+	</style>
+	
+</head>
+<body style="font-family:'Times New Roman', Georgia, Serif; font-size:16px;">
+	
+	<nav class = "navbar navbar-default navbar-fixed-top" role = "navigation">
+		<div class = "navbar-header">
+			<a class = "navbar-brand" href = "#">HB Tool version 1.0</a>
+		</div>
+		<div>
+			<ul class = "nav navbar-nav">
+				<li><a href="https://developers.facebook.com/tools/debug/accesstoken/?app_id=350685531728&__mref=message_bubble" target="_blank">GET TOKEN ANDROID</a></li>
+				<li><a href="https://developers.facebook.com/tools/debug/accesstoken/?app_id=350685531728&__mref=message_bubble" target="_blank">GET TOKEN IPHONE</a></li>
+
+				<li class = "dropdown">
+					<a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+						GROUP FEATURE
+						<b class = "caret"></b>
+					</a>
+					<ul class = "dropdown-menu">
+						<li><a href = "#">Lọc Token</a></li>
+						<li><a href = "#">AUTO POST</a></li>
+						<li><a href = "#">SCAN GROUP</a></li>
+						<li><a href = "group.html">AUTO ADD MEM</a></li>
+					</ul>
+
+				</li>
+			</ul>
+		</div>
+
+	</nav>
+
+	<div class="container" style="margin-top: 70px">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-sm-10">
+						<div class = "form-group">
+							<label></label>
+							<textarea id="list_token" placeholder="List Token" rows="10" style="width: 100%" class="form-control"></textarea>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<button type="button" class="btn btn-large btn-primary" id="btn_start">START</button>
+						<ul id="error" style="color: red;"></ul>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-sm-6">
+				<div class = "form-group">
+					<label>Token < 800 member</label>
+					<textarea id="list_token_l800" placeholder="List Token" rows="10" style="width: 100%" class="form-control"></textarea>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class = "form-group">
+					<label>Token > 800 member</label>
+					<textarea id="list_token_g800" placeholder="List Token" rows="10" style="width: 100%" class="form-control"></textarea>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="css/js/bootstrap.min.js"></script>
+		<script src="filter_token.js"></script>
+	</body>
+	</html>

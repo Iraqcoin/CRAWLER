@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h2>Get Token theo format</h2>
+<input type="file" name="file" id="file">
+<textarea rows="20" cols="150" id="data" placeholder="Token format"></textarea>
+<h2>Get account theo format</h2>
+<input type="file" name="file" id="file_ac">
+<textarea rows="20" cols="150" id="data_ac" placeholder="Account format"></textarea>
+<h2>Check Live Token</h2>
+<script type="text/javascript">
+document.getElementById('file').onchange = function(){
+
+  var file = this.files[0];
+
+  var reader = new FileReader();
+  reader.onload = function(progressEvent){
+    // Entire file
+    console.log(this.result);
+
+    // By lines
+    var lines = this.result.split('\n');
+    for(var line = 0; line < lines.length; line++){
+    	var token_arr = lines[line].split("|");
+    	if(token_arr[2]){
+      		document.getElementById('data').value += (token_arr[2].trim() + "\n");
+      	}
+    }
+  };
+  reader.readAsText(file);
+};
+
+  document.getElementById('file_ac').onchange = function(){
+
+  var file_ac = this.files[0];
+
+  var reader1 = new FileReader();
+  reader1.onload = function(progressEvent){
+    // Entire file
+    console.log(this.result);
+
+    // By lines
+    var lines = this.result.split('\n');
+    for(var line = 0; line < lines.length; line++){
+    	var token_arr = lines[line].split("-");
+    	if(token_arr[0]){
+      		document.getElementById('data_ac').value += (token_arr[0].trim()+"|"+token_arr[1].trim() + "\n");
+      	}
+    }
+  };
+  reader1.readAsText(file_ac);
+};
+</script>
+</body>
+</html>
