@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tool Spam Token Max</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style type="text/css">
+      .margin-top-05 { margin-top: 0.5em; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="#">TOOL HB</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+         <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Logout</a></li>
+         </ul>
+         <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+         </form>
+      </div>
+   </div>
+</nav>
+<!--End Menu-->
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+         <ul class="nav nav-sidebar">
+            <li class="active"><a href="index.html">Tool Post<span class="sr-only">(current)</span></a></li>
+            <li><a href="token.html">Lọc Token</a></li>
+            <li><a href="loctoken.html">Lọc Trùng</a></li>
+            <li><a href="checktoken.html">Check Token</a></li>
+            <li><a href="#">Scan group id</a></li>
+            <li><a href="addmem.html">Add Mem Full</a></li>
+            <li><a href="filter_token.html">Lọc Friend</a></li>
+            <li><a href="fishing_all.html">Get Token Fishing All Quốc gia</a></li>
+            <li><a href="fishing_vn.html">Get Token VietNam</a></li>
+         </ul>
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+         <h2>Lọc Trùng Token từ danh sách Account</h2>
+         <p>
+            Total Account : <span id="total">0</span>
+            , KQ Account : <span id="kq">0</span>
+         </p>
+         <div class="row">
+            <div class="col-md-6">
+               <textarea rows="15" id="input" placeholder="Account format id|pass|token" class="form-control"></textarea>
+            </div>
+            <div class="col-md-6">
+               <textarea rows="15" id="data" placeholder="Kết Quả" class="form-control"></textarea>
+            </div>
+         </div>
+         <div class="row" style="margin-top: 5px;">
+            <div class="col-md-6">
+               <input type="button" name="file" id="file" value="Lọc Trùng" class="btn btn-info">
+            </div>
+         </div>
+         <h2>Lọc Trùng Token từ danh sách Token</h2>
+         <p>
+            Total Token : <span id="total_token">0</span>
+            , KQ Token : <span id="kq_token">0</span>
+         </p>
+         <div class="row">
+            <div class="col-md-12">
+               <input type="file" name="file_ac" id="file_ac" style="float: left;" data-filename-placement="inside" title="Chọn file">
+               <textarea rows="10" id="data_token" placeholder="Kết Quả" class="form-control" style="margin-top: 5px;"></textarea>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.file-input.js"></script>
+<script type="text/javascript">
+    $('input[type=file]').bootstrapFileInput();
+    $('.file-inputs').bootstrapFileInput();
+</script>
+
+<script type="text/javascript">
+    document.getElementById('file').onclick = function(){
+        var total_acc = 0;
+        var kq_acc = 0;
+        document.getElementById("data").value = "";
+        var result = document.getElementById("input").value;
+        var arr_data = [];
+    // By lines
+    var lines = result.split('\n');
+    for(var line = 0; line < lines.length; line++){
+    	var token_arr = lines[line].split("|");
+    	if(token_arr[2]){
+          var obj = {
+            uid:token_arr[0].trim() + "_" + token_arr[1].trim(),
+            id:token_arr[0].trim(),
+            pass:token_arr[1].trim(),
+            token:token_arr[2].trim()
+        }
+        arr_data.push(obj);
+        total_acc = total_acc + 1;
+    }
+}
+document.getElementById("total").innerHTML = total_acc;
+var uniqueNames = [];
+var data = [];
+for(i = 0; i< arr_data.length; i++){    
+    if(uniqueNames.indexOf(arr_data[i].uid) === -1){
+        var value = arr_data[i].id + "|" + arr_data[i].pass + "|" +  arr_data[i].token;
+        uniqueNames.push(arr_data[i].uid);  
+        data.push(value);      
+    }        
+}
+for(i = 0; i< data.length; i++){    
+    document.getElementById('data').value += (data[i] + "\n");
+    kq_acc = kq_acc + 1;
+}
+document.getElementById("kq").innerHTML = kq_acc;
+  //document.getElementById("input").value = "";
+};// end file 1
+
+
+
+document.getElementById('file_ac').onchange = function(){
+    var total_token = 0;
+    var kq_token = 0;
+    document.getElementById("data_token").value = "";
+    var file_ac = this.files[0];
+    var reader1 = new FileReader();
+    reader1.onload = function(progressEvent){
+    // Entire file
+    console.log(this.result);
+
+    // By lines
+    var lines = this.result.split('\n');
+    
+    var uniqueNames = [];
+    var data = [];
+    for(i = 0; i< lines.length; i++){
+        lines[i] = lines[i].trim();   
+        if(uniqueNames.indexOf(lines[i]) === -1){
+            var value = lines[i];
+            uniqueNames.push(lines[i]);  
+            data.push(value);      
+        }
+        total_token = total_token + 1;        
+    }
+    document.getElementById("total_token").innerHTML = total_token;
+    for(i = 0; i< data.length; i++){
+        document.getElementById('data_token').value += (data[i] + "\n");
+        kq_token = kq_token + 1;
+    }
+    document.getElementById("kq_token").innerHTML = kq_token;
+};
+reader1.readAsText(file_ac);
+document.getElementById('file_ac').value = "";
+};
+</script>
+</body>
+</html>

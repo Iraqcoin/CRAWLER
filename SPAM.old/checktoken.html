@@ -9,18 +9,10 @@
  <link href="css/style.css" rel="stylesheet">
  <style type="text/css">
   .margin-top-05 { margin-top: 0.5em; }
-  span.text-muted{
-    font-size: 18px;
-    font-weight: bold;
-  }
-  .placeholders {
-    margin-bottom: 0px;
-    text-align: center;
-}
 </style>
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+ <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -35,47 +27,45 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Dashboard</a></li>
         <li><a href="#">Settings</a></li>
+        <li><a href="#">Profile</a></li>
         <li><a href="#">Help</a></li>
-        <li><a href="#">Logout</a></li>
       </ul>
       <form class="navbar-form navbar-right">
         <input type="text" class="form-control" placeholder="Search...">
       </form>
     </div>
   </div>
-</nav><!--End Menu-->
+</nav>
 
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-3 col-md-2 sidebar">
       <ul class="nav nav-sidebar">
-        <li class="active"><a href="index.html">Tool Post<span class="sr-only">(current)</span></a></li>
-        <li><a href="token.html">Lọc Token</a></li>
-        <li><a href="loctoken.html">Lọc Trùng</a></li>
-        <li><a href="checktoken.html">Check Token</a></li>
+        <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Lọc Token</a></li>
+        <li><a href="#">Check Token</a></li>
         <li><a href="#">Scan group id</a></li>
-        <li><a href="addmem.html">Add Mem Full</a></li>
-       <li><a href="filter_token.html">Lọc Friend</a></li>
-       <li><a href="fishing_all.html">Get Token Fishing All Quốc gia</a></li>
-       <li><a href="fishing_vn.html">Get Token VietNam</a></li>
+        <li><a href="#">Add mem</a></li>
+       
       </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-      <h2 class="page-header">Dashboard</h2>
+      <h1 class="page-header">Dashboard</h1>
 
       <div class="row placeholders">
         <div class="col-xs-6 col-sm-3 placeholder">
-          <img src="img/groups-icon.png" width="100" height="100" class="img-responsive" alt="Generic placeholder thumbnail">
+          <img src="groups-icon.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
           <h4>Total Token</h4>
           <span class="text-muted" id="total_token">0</span>
         </div>
         <div class="col-xs-6 col-sm-3 placeholder">
-          <img src="img/icon-friends.jpg" width="100" height="100" class="img-responsive" alt="Generic placeholder thumbnail">
+          <img src="icon-friends.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
           <h4>Total Live</h4>
           <span class="text-muted" id="total_token_live">0</span>
         </div>
         <div class="col-xs-6 col-sm-3 placeholder">
-          <img src="img/icon-friends.jpg" width="100" height="100" class="img-responsive" alt="Generic placeholder thumbnail">
+          <img src="icon-friends.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
           <h4>Total Die</h4>
           <span class="text-muted" id="total_token_die">0</span>
         </div>
@@ -83,26 +73,26 @@
 
      <div class="row">
        <div class="col-xs-12">
-          <h3 class="sub-header">List Token</h3>
+          <h2 class="sub-header">List Token</h2>
           <textarea class="form-control" rows="7" id="list_token"></textarea>
        </div>
      </div>
       <div class="row">
        <div class="col-xs-12">
-          <h3 class="sub-header">Token Live</h3>
-          <textarea class="form-control" rows="10" id="token_live"></textarea>
+          <h2 class="sub-header">Token Live</h2>
+          <textarea class="form-control" rows="7" id="token_live"></textarea>
        </div>
      </div>
      <div class="row">
        <div class="col-xs-12">
-          <h3 class="sub-header">Token Die</h3>
-          <textarea class="form-control" rows="5" id="token_die"></textarea>
+          <h2 class="sub-header">Token Die</h2>
+          <textarea class="form-control" rows="7" id="token_die"></textarea>
        </div>
      </div>
      <div class="row">
        <div class="col-xs-12">
-          <h3 class="sub-header">Location</h3>
-          <textarea class="form-control" rows="7" id="locations"></textarea>
+          <h2 class="sub-header">Location</h2>
+          <textarea class="form-control" rows="5" id="locations"></textarea>
        </div>
      </div>
     <button type="button" class="btn btn-primary margin-top-05" id="start_check">Start Check</button>

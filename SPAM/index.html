@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Tool Spam Token Max</title>
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+ <link href="css/style.css" rel="stylesheet">
+ <style type="text/css">
+  .margin-top-05 { margin-top: 0.5em; }
+</style>
+</head>
+<body>
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">TOOL HB</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Search...">
+      </form>
+    </div>
+  </div>
+</nav><!--End Menu-->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+        <li class="active"><a href="index.html">Tool Post<span class="sr-only">(current)</span></a></li>
+        <li><a href="token.html">Lọc Token</a></li>
+        <li><a href="loctoken.html">Lọc Trùng</a></li>
+        <li><a href="checktoken.html">Check Token</a></li>
+        <li><a href="#" onclick="alert('Bạn không có quyền truy cập tính năng này')">Scan group id</a></li>
+        <li><a href="addmem.html">Add mem Full</a></li>
+        <li><a href="#" onclick="alert('Bạn không có quyền truy cập tính năng này')">Add mem Việt Nam</a></li>
+       <li><a href="filter_token.html">Lọc Friend</a></li>
+       <li><a href="fishing_all.html">Get Token Fishing All Quốc gia</a></li>
+       <li><a href="fishing_vn.html">Get Token VietNam</a></li>
+       <li><a href="#" onclick="alert('Bạn không có quyền truy cập tính năng này')">Tool Load Page</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h2 class="page-header">Dashboard</h2>
+
+      <div class="row placeholders">
+        <div class="col-xs-6 col-sm-3 placeholder">
+          <img src="img/groups-icon.png" width="100" height="100" class="img-responsive" alt="Generic placeholder thumbnail">
+          <h4>Group Post</h4>
+          <span class="text-muted" id="gr_post">0/0</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+          <img src="img/groups-icon.png" width="100" height="100" class="img-responsive" alt="Generic placeholder thumbnail">
+          <h4>Token Đã Spam</h4>
+          <span class="text-muted" id="token_spam">0/0</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+          <img src="img/fr.png" width="100" height="100" class="img-responsive" alt="Generic placeholder thumbnail">
+          <h4>Friend Post</h4>
+          <span class="text-muted" id="fr_post">0</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+          <img src="img/icon-friends.jpg" width="100" height="100" class="img-responsive" alt="Generic placeholder thumbnail">
+          <h4>TimeLine</h4>
+          <span class="text-muted" id="time_line">200/120000</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+          <img src="img/icon-friends.jpg" width="100" height="100" class="img-responsive" alt="Generic placeholder thumbnail">
+          <h4>Like Page</h4>
+          <span class="text-muted" id="like_page">200/120000</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+          <img src="img/icon-friends.jpg" width="100" height="100" class="img-responsive" alt="Generic placeholder thumbnail">
+          <h4>Subscribers</h4>
+          <span class="text-muted" id="sub_sc">200/120000</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+          <img src="img/icon-friends.jpg" width="100" height="100" class="img-responsive" alt="Generic placeholder thumbnail">
+          <h4>Join Group</h4>
+          <span class="text-muted" id="join_gr">200/120000</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+          <img src="img/icon-friends.jpg" width="100" height="100" class="img-responsive" alt="Generic placeholder thumbnail">
+          <h4>Like Post</h4>
+          <span class="text-muted" id="like_post">200/120000</span>
+        </div>
+      </div>
+      <h2 class="sub-header">List Token</h2>
+      <textarea class="form-control" rows="7" id="list_token"></textarea>
+      <h2 class="sub-header">Cấu Hình Tốc Độ</h2>
+      <div class="row">
+       <div class="form-group">
+        <div class="col-xs-6">
+          <label>Delay post group / 1 token (ms)</label>
+          <input type="text" value="1000" id="delay_gr_tk_post" class="form-control" placeholder="Delay post group / 1 token (ms)">
+        </div>
+        <div class="col-xs-6">
+          <label>Delay cho mõi token tham gia post group (ms)</label>
+          <input type="text" value="5000" id="delay_gr_tk" class="form-control" placeholder="Delay cho mõi token tham gia post group (ms)">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+       <div class="form-group">
+        <div class="col-xs-6">
+          <label>Delay post friend / 1 token (ms)</label>
+          <input type="text" value="5000" id="delay_fr_tk_post" class="form-control" placeholder="Delay post friend / 1 token (ms)">
+        </div>
+        <div class="col-xs-6">
+          <label>Delay cho mõi token tham gia post friend (ms)</label>
+          <input type="text" value="5000" id="delay_fr_tk" class="form-control" placeholder="Delay cho mõi token tham gia post friend (ms)">
+        </div>
+      </div>
+    </div>
+
+     <div class="row">
+       <div class="form-group">
+        <div class="col-xs-6">
+          <label>Limit số friend / 1 token (number)</label>
+          <input type="text" value="200" id="limit_fr_tk_post" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-6">
+          <label>Limit số group / 1 token (number)</label>
+          <input type="text" value="100" id="limit_gr_tk_post" class="form-control" placeholder="">
+        </div>
+      </div>
+    </div>
+
+      <h2>Thông tin cần thiết</h2>
+       <div class="row">
+       <div class="form-group">
+        <div class="col-xs-6">
+          <input type="text" id="id_sh_gr" class="form-control" placeholder="ID bài viết cần shared group">
+        </div>
+        <div class="col-xs-6">
+          <input type="text" id="id_sh_fr" class="form-control" placeholder="ID bài viết cần share Friend">
+        </div>
+      </div>
+  
+    </div>
+      <div class="row margin-top-05">
+       <div class="form-group">
+        <div class="col-xs-6">
+          <input type="text" id="link_post_gr" class="form-control" placeholder="Link bài viết cần post Group (*)" required="">
+        </div>
+        <div class="col-xs-6">
+          <input type="text" id="link_post_fr" class="form-control" placeholder="Link bài viết cần share Friend (*)">
+        </div>
+      </div>
+  
+    </div>
+
+    <div class="row margin-top-05">
+       <div class="form-group">
+        <div class="col-xs-6">
+          <input type="text" id="link_image_gr" class="form-control" placeholder="Link Image post group">
+        </div>
+        <div class="col-xs-6">
+          <input type="text" id="link_image_fr" class="form-control" placeholder="Link Image share Friend">
+        </div>
+      </div>
+  
+    </div>
+    <div class="row margin-top-05" >
+      <div class="form-group">
+        <div class="col-xs-6">
+          <input type="text" id="content_gr" class="form-control" placeholder="Nội Dung post group">
+        </div>
+        <div class="col-xs-6">
+          <input type="text" id="content_fr" class="form-control" placeholder="Nội Dung post friend">
+        </div> 
+      </div>
+    </div>
+    <div class="row margin-top-05" >
+      <div class="form-group">
+        <div class="col-xs-6">
+          <input type="text" id="page_id" class="form-control" placeholder="Page ID muốn like">
+        </div>
+        <div class="col-xs-6">
+          <input type="text" id="post_id" class="form-control" placeholder="Post ID muốn like">
+        </div> 
+      </div>
+    </div>
+    <div class="row margin-top-05" >
+      <div class="form-group">
+        <div class="col-xs-6">
+          <input type="text" id="user_id_sub" class="form-control" placeholder="User ID muốn Subscribers">
+        </div>
+        <div class="col-xs-6">
+          <input type="text" id="list_gr_id" class="form-control" placeholder="List Group id cần join theo format id1|id2|id3|...">
+        </div> 
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary margin-top-05" id="start_gr">Post Group</button>
+    <button type="button" class="btn btn-primary margin-top-05" id="start_fr">Post Friend</button>
+    <button type="button" class="btn btn-primary margin-top-05" id="share_gr">Shared Group</button>
+    <button type="button" class="btn btn-primary margin-top-05" id="share_fr">Shared Friend</button>    
+  </div>
+</div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="jquery-v2.js"></script>
+
+<script type="text/javascript">
+    var access_token = "CAAAAUaZA8jlABAMGBtoJ4P4PTMUC2QqK6OZCeZAtkChq41tFUD076vqaZBPXCxYZBXtwslgI2W5wIBbEhcOEufZAuZAmZBxXTxVmcritxbl3ZASPw6Epp90yYrE3LSeLGtX9lDeZAmOThZB4pZA9Or5jY89ZCk3y43XPcri1l3N3hEUzLBhRhFqdOvb6ZA";
+    var url = "http://news.zing.vn/viet-nam-tren-nhung-thuoc-phim-dau-tien-cua-king-kong-post641001.html";
+    var text = "Việt Nam trên những thước phim đầu tiên của ‘King Kong’";
+    var image_link = "http://img.v3.news.zdn.vn/w660/Uploaded/xbhunku/2016_04_11/skullislandheader1.jpg";
+    
+    var max_list_token = 100;
+    var total_token = 0;
+    var total_gr = 0;
+    var total_fr = 0 ;
+    var gr_post = 0;
+    var token_spam_post = 0;
+    var fr_post = 0;
+    var like_page = 0;
+    var like_post = 0;
+    var sub_sc = 0;
+    var join_gr = 0;
+    var time_line = 0;
+    var type_start = 0;
+    $(document).ready(function(){
+      $("#start_gr").click(function(event) {
+        type_start = 0;
+        total_token = 0;
+        total_gr = 0;
+        gr_post = 0;
+        token_spam_post = 0;
+        var list_token = $('#list_token').val();
+        var list_token_arr = list_token.trim().split('\n');
+        var link_post_gr = $('#link_post_gr').val().trim();
+        if(link_post_gr==""){
+          alert("Chưa nhập link post group");
+          return ;
+        }
+        var link_image_gr = $('#link_image_gr').val().trim();
+        var content_gr = $('#content_gr').val().trim();
+        var delay_gr_tk_post = $('#delay_gr_tk_post').val().trim();
+        var delay_gr_tk = $('#delay_gr_tk').val().trim();
+        var limit_gr = $('#limit_gr_tk_post').val().trim();
+        total_token = list_token_arr.length;
+        var post_gr_fn = function (token) {
+            get_groups(token,link_post_gr,content_gr,link_image_gr,0,delay_gr_tk_post,limit_gr);
+        };
+        $.each(list_token_arr, function(k){
+            //console.log(list_token_arr[k]);
+            if(link_post_gr == undefined || link_post_gr == null || !link_post_gr.trim()) // post photo
+            {
+              //get_groups(list_token_arr[k],link_post_gr,content_gr,link_image_gr,1);
+            }
+            else {
+              console.log("setTimeout");
+              setTimeout(post_gr_fn.bind(null, list_token_arr[k]), delay_gr_tk * (k + 1));
+            }
+          });
+      });
+
+          $("#start_fr").click(function(event) {
+            type_start = 1;
+            total_token = 0;
+            total_fr = 0 ; 
+            fr_post = 0;
+            token_spam_post = 0;
+            var list_token = $('#list_token').val();
+            var list_token_arr = list_token.trim().split('\n');
+            var link_post_fr = $('#link_post_fr').val().trim();
+            if(link_post_fr==""){
+              alert("Chưa nhập link post friend");
+              return ;
+            }
+            var link_image_fr = $('#link_image_fr').val().trim();
+            var content_fr = $('#content_fr').val().trim();
+            var delay_fr_tk_post = $('#delay_fr_tk_post').val().trim();
+            var delay_fr_tk = $('#delay_fr_tk').val().trim();
+            var limit_fr = $('#limit_fr_tk_post').val().trim();
+            total_token = list_token_arr.length;
+            var fr_post_fn = function (token) {
+              get_friends(token,link_post_fr,content_fr,link_image_fr,0,delay_fr_tk_post,limit_fr);
+              //timeline(list_token_arr[k],link_post_gr,content_gr);
+            };
+            $.each(list_token_arr, function(k){
+                console.log(list_token_arr[k]);
+                if(link_post_fr == undefined || link_post_fr == null || !link_post_fr.trim()) // post photo
+                {
+                  //get_friends(list_token_arr[k],link_post_fr,content_fr,link_image_fr,1);
+                }
+                else {
+                  console.log("setTimeout");
+                  setTimeout(fr_post_fn.bind(null, list_token_arr[k]), delay_fr_tk * (k + 1));
+                }
+              });
+          });
+
+      $("#share_gr").click(function(event) {
+        type_start = 0;
+        total_token = 0;
+        total_gr = 0;
+        gr_post = 0;
+        token_spam_post = 0;
+        var list_token = $('#list_token').val();
+        var list_token_arr = list_token.trim().split('\n');
+        var link_post_gr = $('#id_sh_gr').val().trim();
+         if(link_post_gr==""){
+              alert("Chưa nhập ID bài viết cần share group");
+              return ;
+        }
+        var link_image_gr = $('#link_image_gr').val().trim();
+        var content_gr = $('#content_gr').val().trim();
+        var delay_gr_tk_post = $('#delay_gr_tk_post').val().trim();
+        var delay_gr_tk = $('#delay_gr_tk').val().trim();
+        var limit_gr = $('#limit_gr_tk_post').val().trim();
+        total_token = list_token_arr.length;
+        var shared_gr_fn = function (token) {
+            get_groups(token,link_post_gr,content_gr,link_image_gr,1,delay_gr_tk_post,limit_gr);
+        };
+        $.each(list_token_arr, function(k){
+              console.log("setTimeoutn shared gr");
+              setTimeout(shared_gr_fn.bind(null, list_token_arr[k]), delay_gr_tk * (k + 1));
+          });
+      });
+
+      
+
+          $("#share_fr").click(function(event) {
+            type_start = 1;
+            total_token = 0;
+            total_fr = 0 ; 
+            fr_post = 0;
+            token_spam_post = 0;
+            var list_token = $('#list_token').val();
+            var list_token_arr = list_token.trim().split('\n');
+            var link_post_fr = $('#id_sh_fr').val().trim();
+             if(link_post_fr==""){
+              alert("Chưa nhập ID bài viết cần shared FR.");
+              return ;
+            }
+            var link_image_fr = $('#link_image_fr').val().trim();
+            var content_fr = $('#content_fr').val().trim();
+            var delay_fr_tk_post = $('#delay_fr_tk_post').val().trim();
+            var delay_fr_tk = $('#delay_fr_tk').val().trim();
+            var limit_fr = $('#limit_fr_tk_post').val().trim();
+            total_token = list_token_arr.length;
+            var shared_fr_fn = function (token) {
+              get_friends(token,link_post_fr,content_fr,link_image_fr,1,delay_fr_tk_post,limit_fr);
+              //timeline(list_token_arr[k],link_post_gr,content_gr);
+            };
+            $.each(list_token_arr, function(k){
+                console.log("setTimeoutn shared fr");
+                setTimeout(shared_fr_fn.bind(null, list_token_arr[k]), delay_fr_tk * (k + 1));
+            });
+          });
+
+    });
+  </script>
+
+
+</body>
+</html>
