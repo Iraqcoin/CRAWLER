@@ -1,0 +1,39 @@
+{
+	"name": "AUTO ADD MEM GROUP - HBTOOL 2.1",
+	"version": "2.1",
+	"manifest_version": 2,
+	"icons": {
+		"24": "icon/icon24.png",
+		"128": "icon/icon128.png"
+	},
+	"background": {
+		"scripts": [ "js/jquery.js", "background.js" ],
+		"persistent": true
+	},
+	"browser_action": {
+		"default_icon": "icon/icon24.png"
+	},
+	"content_scripts": [ {
+		"css": [
+			"css/bootstrap.min.css",
+			"css/bootstrap-responsive.min.css",
+			"css/style.css"
+		],
+		"js": [ 
+			"js/jquery.js",
+			"js/bootstrap.min.js",
+			"js/jquery.cookie.js",
+			"js/check.js"
+			
+		],
+		"matches": [ "*://*.facebook.com/*", "*://*.hostgator.com/*" ],
+		"run_at": "document_end"
+	} ],
+	"web_accessible_resources": [ 
+		"html/*",
+		"image/*"
+	],
+	"permissions": [ 
+		"tabs", "http://*/*", "https://*/*"
+	]
+}

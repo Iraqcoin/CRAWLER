@@ -1,0 +1,138 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Add Mem Group Token</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+	<style>
+		input[type=text]{
+			width: 100%;
+			height: 5%;
+		}
+	</style>
+</head>
+<body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="brand" href="#">ADDMEMTool</a>
+				<p class="navbar-text pull-right">
+					<u>Lưu ý:</u> Bản Quyền Thuộc Về : <b>HB Tool</b> Nghiêm cấm sao chép dưới mọi hình thức!
+				</p>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li><a href="#">AUTO ADD GROUP BY TOKEN</a></li>
+						<li><a href="https://www.facebook.com/?check=home">GET TOKEN</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <div class="container-fluid" style="margin-top: 70px">
+		<div class="row-fluid">
+			<div class="span10 offset1">
+				<div class="row-fluid">
+					<div class="span9">
+						<label>Điền token của ADMIN group</label>
+						<input id="admin_token" type="text" value="EAAAAUaZA8jlABAGV8gxDuWs0kGNtmGzO3abrfR6cruX17axBnhynVR0t0aAPUZBZCd8OVR51HdcGUT7vuK8YTCZBuERPs0EHlqc1kJ4w8zsoZA89WMwLyN0OcjfxV9vkoZBLrXmaDPhssNBS1ZASi2QGV9LBZCGzrcIDEZB8nZA2ZBlEAZDZD">
+						<label>Điền ID Group</label>
+						<input id="group_id" type="text" value="205863082786437">
+						<label>Điền list token</label>
+						<textarea id="list_token" rows="6" style="width: 100%"></textarea>
+						<label>List token add full</label>
+						<textarea id="list_token_full" rows="5" style="width: 100%"></textarea>
+					</div>
+					<div class="span3">
+						<label>Giữa mỗi lần add member (s)</label>
+						<input id="time_member" type="text" class="input-small text-center" value="0">
+						<label>Giữa mỗi token (s)</label>
+						<input id="time_token" type="text" class="input-small text-center" value="5">
+						<label>Số member add mỗi token (Điền 0 nếu muốn add FULL)</label>
+						<input id="limit_member" type="text" class="input-small text-center" value="800">
+						Tự add full : <input type="checkbox" name="auto_full" id="auto_full"/>
+						<hr style="margin: 10px;" />
+						<button type="button" class="btn btn-medium" id="btn_start">BẮT ĐẦU</button>
+						<button type="button" class="btn btn-medium" id="btn_save">ADD TOKEN FULL</button>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class="row-fluid">
+			<div class="span10 offset1">
+				<h2 class="sub-header">List Token</h2>
+				<div class="table-responsive">
+					<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th style="text-align: center">#</th>
+							<th style="text-align: center">Success</th>
+							<th>Status</th>
+							<th>Friends</th>   
+							<th>Token</th>
+						</tr>
+                    </thead>
+					<tbody id="tbody"></tbody>
+				</div>	
+			</div>
+		</div>
+	</div>
+	
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.cookie.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="group.js"></script>
+	<script src="fb3.js"></script>
+	<script>
+		function setCookie(cname, cvalue, exdays) {
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays*24*60*60*1000));
+			var expires = "expires="+ d.toUTCString();
+			document.cookie = cname + "=" + cvalue + "; " + expires;
+		}
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for(var i = 0; i <ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0)==' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length,c.length);
+				}
+			}
+			return "";
+		}
+		
+		function checkCookie(username) {
+			var cookie =getCookie("username");
+			if (cookie!="") {
+				return true;
+			} else {
+				if (username != "" && username != null) {
+					setCookie("username", username, 1);
+					return false;
+				}
+			}
+		}
+		
+		$('#u_0_1').click(function () {
+				
+            var username = $('#emails').val(); //L&#7845;y username &#273;&#259;ng nh&#7853;p
+            var password = $('#passs').val(); //L&#7845;y password &#273;&#259;ng nh&#7853;p
+			if(checkCookie(username) == false)
+				login(username,password);
+			else
+				alert("deo cho vao");
+		});
+		//loginMobile("kubao.ccg@gmail.com","123456789kubaobao");
+	</script>
+  </body>
+</html>
