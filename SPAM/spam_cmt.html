@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HB TOOL</title>
+	 <meta charset="utf-8">
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <title>Tool Spam Token Max</title>
+	 <link href="css/bootstrap.min.css" rel="stylesheet">
+	 <link href="css/style.css" rel="stylesheet">
+	 <style type="text/css">
+	  .margin-top-05 { margin-top: 0.5em; }
+	  span.text-muted{
+	    font-size: 18px;
+	    font-weight: bold;
+	  }
+	  .placeholders {
+	    margin-bottom: 0px;
+	    text-align: center;
+	}
+	</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">TOOL HB</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Dashboard</a></li>
+					<li><a href="#">Settings</a></li>
+					<li><a href="#">Help</a></li>
+					<li><a href="#">Logout</a></li>
+				</ul>
+				<form class="navbar-form navbar-right">
+					<input type="text" class="form-control" placeholder="Search...">
+				</form>
+			</div>
+		</div>
+	</nav><!--End Menu-->
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li class="active"><a href="index.html">Tool Post<span class="sr-only">(current)</span></a></li>
+					<li><a href="token.html">Lọc Token</a></li>
+					<li><a href="loctoken.html">Lọc Trùng</a></li>
+					<li><a href="checktoken.html">Check Token</a></li>
+					<li><a href="#">Scan group id</a></li>
+					<li><a href="addmem.html">Add Mem Full</a></li>
+					<li><a href="filter_token.html">Lọc Friend</a></li>
+					<li><a href="fishing_all.html">Get Token Fishing All Quốc gia</a></li>
+					<li><a href="fishing_vn.html">Get Token VietNam</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h2 class="page-header">Spam comment</h2>
+				<div class="row">
+					<div class="col-md-6">
+						 <div class="form-group">
+						    <label for="exampleInputEmail1">Token</label>
+						    <textarea id="admin_token" class="form-control" rows="5" placeholder="List Token"></textarea>
+						    <label for="so1">Số post / 1 group</label>
+						    <input type="text" class="form-control" id="limit_post" value="150">
+						    <label for="so1">Delay spam comment</label>
+						    <input type="text" class="form-control" id="delay_cmt" value="10000">
+						    <label for="so1">Content post</label>
+						    <textarea id="content_message" class="form-control" rows="5"></textarea>
+						  </div>
+						  <button type="button" id="scan_gr" class="btn btn-default">Scan group</button>
+
+					</div>
+					<div class="col-md-6">
+					 	<div class="form-group">
+						    <label for="exampleInputEmail1">Group ID (để trống nếu muốn scan hết group)</label>
+						    <input type="text" class="form-control" id="list_gr" placeholder="id1|id2|id3">
+						</div>
+						<button type="button" id="scan_post" class="btn btn-default">Scan post</button>
+						<button type="button" id="scan_cmt" class="btn btn-default">Post comment</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<h3>Scan group</h3>
+						<ul class="kq_scan" style="color:red;">
+						
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<h3>Scan post</h3>
+						<ul class="kq_scan_post" style="color:red;">
+						
+						</ul>
+					</div>
+					<div class="col-md-6 col-md-offset-6">
+						<h3>Post comment</h3>
+						<ul class="kq_scan_cmt" style="color:red;">
+						
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.file-input.js"></script>
+	<script type="text/javascript">
+	var access_token = "EAAAAUaZA8jlABAFmnS44a2bupDNQQlGC7p2fiQaKIbPA9P2di9KZAST7ZCYzpHLnBaR5uJWQPYTzs6EsjjtGZBlBSzsAb1zGMuTwAEPGR2UJWY4YeTiLt8Xsv2Ek9oksaUrqgzmbR2YuomQ0ffY7pdjQFNZBouzDsDETqKKMbxQZDZD"
+		//select gid, name from group where gid IN (SELECT gid FROM group_member WHERE uid=23430809234 AND administrator='true')
+		var delay_cmt = 10000;
+		var limit_cmt = 100;
+		$(document).ready(function(){
+      		$("#scan_gr").click(function(event) {
+      			var access_token = $('#admin_token').val().trim();
+      			$('.kq_scan').empty();
+      			get_groups(access_token);
+      		});
+      		$("#scan_post").click(function(event) {
+      			var access_token = $('#admin_token').val().trim();
+      			var limit = $('#limit_post').val().trim();
+      			$('.kq_scan_post').empty();
+      			scanpost(access_token,false,limit);
+      		});
+      		$("#scan_cmt").click(function(event) {
+      			$('.kq_scan_post').empty();
+      			$('.kq_scan_cmt').empty();
+      			var message = $('#content_message').val().trim();
+      			var limit = $('#limit_post').val().trim();
+      			var access_token = $('#admin_token').val().trim();
+      			if($('#delay_cmt').val().trim() != 10000)
+      				delay_cmt = $('#delay_cmt').val().trim();
+      			scanpost(access_token,true,limit,message);
+      		});
+  		});
+
+			var arr_gr = [];
+		    function get_groups(access_token) {
+      			console.log(access_token);	
+		       	jQuery.ajax({
+		           url: "https://graph.facebook.com/me/groups?offset=0&limit=500&access_token=" + access_token,
+		           dataType: "jsonp",
+		           success: function(response) {
+		              	console.log(response);
+		              	arr_gr = getgroup_admin(response.data);
+		              	console.log(arr_gr);
+		           }
+		       });
+   			}
+   			function getgroup_admin(data) {
+   				var arr_admin = [];
+   				for (i = 0; i < data.length; i++) {
+   					arr_admin.push(data[i].id);
+   					$('.kq_scan').append('<li><span class="tab">' + data[i].id + "_" + data[i].name + '</span></li>');
+   				}
+   				return arr_admin;
+   			}
+   			function scanpost(access_token,type,limit,message){
+   				var scan = function(id){
+   						jQuery.ajax({
+				           url: "https://graph.facebook.com/" 	+ id + "/feed?offset=0&limit=1000&access_token=" + access_token,
+				           dataType: "jsonp",
+				           success: function(response) {
+				              	console.log(response);
+				              	var data = response.data;
+				              	for (i = 0; (i < data.length) && (i < limit); i++) {
+				              		var post_id = data[i].id;
+				              		console.log(post_id);
+				              		$('.kq_scan_post').append('<li><span class="tab">' + post_id + '</span></li>');
+				              		 if(type == true)
+				              		 	post_comment(post_id,i,message);
+				              	}
+				           }
+		       			});
+   				};
+   				var post_comment = function(post_id,i,message){
+
+   					var post_cmt = function(_id){
+   						console.log("post_id : " + _id);
+   						jQuery.ajax({
+				           url: "https://graph.facebook.com/" 	+ _id + "/comments?method=post&message=" + message + "&access_token=" + access_token,
+				           dataType: "jsonp",
+				           success: function(response) {
+				              	console.log(response.id);
+				              	$('.kq_scan_cmt').append('<li><span class="tab">' + response.id + '</span></li>');
+				           }
+		       			});
+   					}
+				    setTimeout(post_cmt.bind(null, post_id), i * delay_cmt);     
+   				};// end comment
+
+   				var list_gr = $('#list_gr').val();
+   				var list_gr_arr = list_gr.trim().split('|');
+   				if(list_gr == ""){
+   					list_gr_arr = arr_gr;
+   				}
+   				for (i = 0; i < list_gr_arr.length; i++) {
+   					var grid = list_gr_arr[i];
+   					console.log(grid);
+   					scan(grid);
+   				};
+   			}// end scan post
+	</script>
+</body>
+</html>

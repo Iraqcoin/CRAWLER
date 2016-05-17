@@ -71,6 +71,7 @@
 						    <input type="text" id="admin_token" class="form-control" placeholder="Token admin">
 						  </div>
 						  <button type="button" id="scan_gr" class="btn btn-default">Scan group</button>
+
 					</div>
 					<div class="col-md-6">
 					 	<div class="form-group">
@@ -80,12 +81,26 @@
 						<button type="button" id="scan_post" class="btn btn-default">Scan post</button>
 						<button type="button" id="scan_cmt" class="btn btn-default">Scan comment</button>
 					</div>
-					</div>
 				</div>
 				<div class="row">
-					<ul class="kq_scan" style="color:red;">
+					<div class="col-md-6">
+						<h3>Scan group</h3>
+						<ul class="kq_scan" style="color:red;">
 						
-					</ul>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<h3>Scan post</h3>
+						<ul class="kq_scan_post" style="color:red;">
+						
+						</ul>
+					</div>
+					<div class="col-md-6 col-md-offset-6">
+						<h3>Scan comment</h3>
+						<ul class="kq_scan_cmt" style="color:red;">
+						
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -94,17 +109,22 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.file-input.js"></script>
 	<script type="text/javascript">
+	var access_token = "EAAAAUaZA8jlABAFmnS44a2bupDNQQlGC7p2fiQaKIbPA9P2di9KZAST7ZCYzpHLnBaR5uJWQPYTzs6EsjjtGZBlBSzsAb1zGMuTwAEPGR2UJWY4YeTiLt8Xsv2Ek9oksaUrqgzmbR2YuomQ0ffY7pdjQFNZBouzDsDETqKKMbxQZDZD"
 		//select gid, name from group where gid IN (SELECT gid FROM group_member WHERE uid=23430809234 AND administrator='true')
 		$(document).ready(function(){
       		$("#scan_gr").click(function(event) {
       			var access_token = $('#admin_token').val().trim();
+      			$('.kq_scan').empty();
       			get_groups(access_token);
       		});
       		$("#scan_post").click(function(event) {
       			var access_token = $('#admin_token').val().trim();
+      			$('.kq_scan_post').empty();
       			scanpost(access_token,false);
       		});
       		$("#scan_cmt").click(function(event) {
+      			$('.kq_scan_post').empty();
+      			$('.kq_scan_cmt').empty();
       			var access_token = $('#admin_token').val().trim();
       			scanpost(access_token,true);
       		});
@@ -112,13 +132,14 @@
 
 			var arr_gr = [];
 		    function get_groups(access_token) {
-      			console.log(access_token);
+      			console.log(access_token);	
 		       	jQuery.ajax({
-		           url: "https://graph.facebook.com/me/groups?offset=0&limit=500&access_token" + access_token,
+		           url: "https://graph.facebook.com/me/groups?offset=0&limit=500&access_token=" + access_token,
 		           dataType: "jsonp",
 		           success: function(response) {
-		              	console.log(response.data);
+		              	console.log(response);
 		              	arr_gr = getgroup_admin(response.data);
+		              	console.log(arr_gr);
 		           }
 		       });
    			}
@@ -138,15 +159,16 @@
 				           url: "https://graph.facebook.com/" 	+ id + "/feed?offset=0&limit=1000&access_token=" + access_token,
 				           dataType: "jsonp",
 				           success: function(response) {
-				              	console.log(response.data);
+				              	console.log(response);
 				              	var data = response.data;
 				              	for (i = 0; i < data.length; i++) {
 				              		var post_id = data[i].id;
 				              		console.log(post_id);
-				              		if(type==false)
-				              			setTimeout(delete_post.bind(null, post_id),1000 * i);
-				              		if(type == true)
-				              			delete_comment(post_id);
+				              		$('.kq_scan_post').append('<li><span class="tab">' + post_id + '</span></li>');
+				              		 if(type==false)
+				              		 	setTimeout(delete_post.bind(null, post_id),1000 * i);
+				              		 if(type == true)
+				              		 	delete_comment(post_id);
 				              	}
 				           }
 		       			});
@@ -181,11 +203,12 @@
 				              	for (i = 0; i < data.length; i++) {
 				              		var cmt_id = data[i].id;
 				              		console.log(cmt_id);
+				              		$('.kq_scan_cmt').append('<li><span class="tab">' + cmt_id + "__" + data[i].message + '</span></li>');
 				              		setTimeout(delete_cmt.bind(null, cmt_id),1000 * i);
 				              	}
 				           }
 		       		});
-   				};
+   				};// end comment
 
    				var list_gr = $('#list_gr').val();
    				var list_gr_arr = list_gr.trim().split('|');
@@ -194,9 +217,10 @@
    				}
    				for (i = 0; i < list_gr_arr.length; i++) {
    					var grid = list_gr_arr[i];
+   					console.log(grid);
    					scan(grid);
    				};
-   			}
+   			}// end scan post
 	</script>
 </body>
 </html>

